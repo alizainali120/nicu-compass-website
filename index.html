@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NICU Compass</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+    </style>
+</head>
+<body class="antialiased leading-relaxed">
+
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl sm:text-3xl font-bold text-[#0077b6] rounded-md">
+                    NICU Compass
+                </div>
+                <nav class="hidden sm:block">
+                    <a href="#mission" class="text-gray-600 hover:text-gray-900 mx-3 font-medium transition-colors duration-200 rounded-md">Mission</a>
+                    <a href="#resources" class="text-gray-600 hover:text-gray-900 mx-3 font-medium transition-colors duration-200 rounded-md">Resources</a>
+                    <a href="#support" class="text-gray-600 hover:text-gray-900 mx-3 font-medium transition-colors duration-200 rounded-md">Support</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-[#e9f2ff] py-16 sm:py-24 text-center">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#003d5c] mb-4">
+                Guiding Your Journey Through the NICU
+            </h1>
+            <p class="text-lg sm:text-xl text-gray-700 max-w-2xl mx-auto mb-8">
+                Providing support, information, and a sense of community for families with a baby in the Neonatal Intensive Care Unit.
+            </p>
+            <a href="#resources" class="inline-block bg-[#0077b6] text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-[#005f93] transition-colors duration-300">
+                Explore Resources
+            </a>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section id="mission" class="py-12 sm:py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white p-8 sm:p-12 rounded-xl shadow-lg">
+                <h2 class="text-3xl sm:text-4xl font-bold text-[#003d5c] mb-6 text-center">
+                    Our Mission
+                </h2>
+                <p class="text-gray-700 text-lg sm:text-xl">
+                    Our mission is to empower families navigating the NICU experience by offering a comprehensive and compassionate guide. We believe that with the right information and a strong support network, parents can feel more confident and connected during this challenging time. This platform is designed to be a reliable "compass" that points you toward the resources you need, when you need them most.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="py-12 sm:py-16 bg-gray-100">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl sm:text-4xl font-bold text-[#003d5c] mb-8 text-center">
+                Resources & Information
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Resource Card 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md transition-transform transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-[#0077b6] mb-2">NICU 101</h3>
+                    <p class="text-gray-600">
+                        An introduction to common NICU terms, equipment, and procedures. We break down the medical jargon so you can feel more informed.
+                    </p>
+                </div>
+                <!-- Resource Card 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md transition-transform transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-[#0077b6] mb-2">Parent Stories</h3>
+                    <p class="text-gray-600">
+                        Read inspiring and honest stories from other parents who have gone through the NICU journey. Find strength in shared experiences.
+                    </p>
+                </div>
+                <!-- Resource Card 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md transition-transform transform hover:scale-105">
+                    <h3 class="text-xl font-semibold text-[#0077b6] mb-2">Discharge Planning</h3>
+                    <p class="text-gray-600">
+                        A helpful checklist and guide to prepare for your baby's transition from the hospital to home.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section id="support" class="py-12 sm:py-16">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-[#003d5c] text-white p-8 sm:p-12 rounded-xl text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+                    Connect with Us
+                </h2>
+                <p class="text-lg sm:text-xl mb-6">
+                    You are not alone. Find a community of support through our forums, or reach out to us with any questions.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="#" class="inline-block bg-[#0077b6] text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-[#005f93] transition-colors duration-300">
+                        Join Our Community
+                    </a>
+                    <a href="#" class="inline-block bg-white text-[#003d5c] font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-200 transition-colors duration-300">
+                        Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-6">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 NICU Compass. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
