@@ -8,7 +8,7 @@
   }
   
   body {
-    @apply antialiased font-sans text-slate-700 bg-gradient-to-br from-primary-50 via-primary-100/50 to-white;
+    @apply antialiased font-sans text-accent-800 bg-gradient-to-br from-primary-50 via-lavender-50/40 to-accent-50/30;
   }
 }
 
@@ -18,15 +18,15 @@
   }
   
   .btn-primary {
-    @apply bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500 focus:ring-offset-2 shadow-lg hover:shadow-xl;
+    @apply bg-primary-400 text-white hover:bg-primary-500 focus:ring-primary-300 focus:ring-offset-2 shadow-lg hover:shadow-xl;
   }
   
   .btn-secondary {
-    @apply bg-white/90 text-primary-600 border border-primary-200 hover:bg-primary-50 focus:ring-primary-500 focus:ring-offset-2 shadow-sm hover:shadow-md backdrop-blur-sm;
+    @apply bg-white/90 text-accent-700 border border-primary-200 hover:bg-primary-50 focus:ring-primary-300 focus:ring-offset-2 shadow-sm hover:shadow-md backdrop-blur-sm;
   }
   
   .card {
-    @apply bg-white/90 backdrop-blur-sm rounded-2xl shadow-sm border border-primary-200 hover:shadow-lg hover:border-primary-300 hover:bg-white transition-all duration-300;
+    @apply bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-primary-100 hover:shadow-lg hover:border-primary-200 hover:bg-white/90 transition-all duration-300;
   }
   
   .section-padding {
