@@ -174,6 +174,9 @@ const NICUCompassApp = {
     initializeModules: function() {
         console.log('Initializing NICU Compass website...');
         
+        // Initialize component system
+        this.initComponentSystem();
+        
         // Initialize navigation
         NavigationManager.initSmoothScrolling();
         NavigationManager.initMobileMenuListeners();
@@ -186,6 +189,25 @@ const NICUCompassApp = {
         AccessibilityManager.manageFocus();
         
         console.log('NICU Compass website initialized successfully!');
+    },
+
+    /**
+     * Initializes the component system and renders cards
+     */
+    initComponentSystem: function() {
+        // Check if we have the required classes and data
+        if (typeof ResourceCardsManager === 'undefined' || typeof resourceCardsData === 'undefined') {
+            console.error('Component system dependencies not loaded');
+            return;
+        }
+        
+        // Initialize the resource cards manager
+        this.resourceCardsManager = new ResourceCardsManager(resourceCardsData);
+        
+        // Render cards to the container
+        this.resourceCardsManager.renderToContainer('resource-cards-container');
+        
+        console.log('Component system initialized with', resourceCardsData.length, 'cards');
     },
 
     /**

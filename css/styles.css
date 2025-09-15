@@ -1,9 +1,12 @@
 /* NICU Compass Website Styles */
 
+/* Import component colors */
+@import url('components/colors.css');
+
 /* Base Styles */
 body {
     font-family: 'Inter', sans-serif;
-    background: #fafafa;
+    background: linear-gradient(135deg, #f8faf8 0%, #f5f9ff 50%, #f0fdfa 100%);
     color: #374151;
 }
 

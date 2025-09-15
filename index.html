@@ -7,6 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/data/resource-cards.js"></script>
+    <script src="js/components/ResourceCard.js"></script>
 </head>
 <body class="antialiased leading-relaxed">
 
@@ -14,43 +16,43 @@
     <header class="bg-white shadow-lg py-4 sticky top-0 z-50 border-b border-gray-100">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center">
-                <div class="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                <div class="text-2xl sm:text-3xl font-bold gradient-brand">
                     ✨ NICU Compass
                 </div>
                 <nav class="hidden sm:block">
-                    <a href="#mission" class="text-gray-600 hover:text-purple-600 mx-4 font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">Our Story</a>
-                    <a href="#resources" class="text-gray-600 hover:text-purple-600 mx-4 font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">Resources</a>
-                    <a href="#support" class="text-gray-600 hover:text-purple-600 mx-4 font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-purple-50">Community</a>
+                    <a href="#mission" class="text-gray-600 hover:text-sage-600 mx-4 font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-sage-50">Our Story</a>
+                    <a href="#resources" class="text-gray-600 hover:text-sage-600 mx-4 font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-sage-50">Resources</a>
+                    <a href="#support" class="text-gray-600 hover:text-sage-600 mx-4 font-medium transition-colors duration-200 px-3 py-2 rounded-lg hover:bg-sage-50">Community</a>
                 </nav>
-                <button class="sm:hidden p-2 text-gray-600 hover:text-purple-600" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
+                <button class="sm:hidden p-2 text-gray-600 hover:text-sage-600" aria-expanded="false" aria-controls="mobile-menu" aria-label="Toggle navigation menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
                 </button>
             </div>
             <div id="mobile-menu" class="mobile-menu sm:hidden mt-4 pb-4">
-                <a href="#mission" class="block py-2 px-4 text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg">Our Story</a>
-                <a href="#resources" class="block py-2 px-4 text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg">Resources</a>
-                <a href="#support" class="block py-2 px-4 text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg">Community</a>
+                <a href="#mission" class="block py-2 px-4 text-gray-600 hover:text-sage-600 hover:bg-sage-50 rounded-lg">Our Story</a>
+                <a href="#resources" class="block py-2 px-4 text-gray-600 hover:text-sage-600 hover:bg-sage-50 rounded-lg">Resources</a>
+                <a href="#support" class="block py-2 px-4 text-gray-600 hover:text-sage-600 hover:bg-sage-50 rounded-lg">Community</a>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-purple-50 via-pink-50 to-pink-50 py-16 sm:py-24 text-center">
+    <section class="gradient-hero py-16 sm:py-24 text-center">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-6xl mb-6">🌟</div>
-            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-6">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold gradient-brand mb-6">
                 Your NICU Journey, Simplified
             </h1>
             <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
                 Gentle guidance, trusted resources, and a caring community for families navigating the NICU experience together.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <a href="#resources" class="inline-block bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                <a href="#resources" class="inline-block bg-sage-500 text-white font-semibold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                     🔍 Explore Resources
                 </a>
-                <a href="#support" class="inline-block bg-white text-purple-600 font-semibold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-purple-200 hover:border-purple-400">
+                <a href="#support" class="inline-block bg-white text-sage-600 font-semibold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-sage-200 hover:border-sage-400">
                     💬 Join Community
                 </a>
             </div>
@@ -60,7 +62,7 @@
     <!-- Mission Section -->
     <section id="mission" class="py-12 sm:py-16">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-white p-8 sm:p-12 rounded-2xl shadow-xl border border-purple-100">
+            <div class="bg-white p-8 sm:p-12 rounded-2xl shadow-xl border border-sage-100">
                 <div class="text-center mb-6">
                     <div class="text-4xl mb-4">💜</div>
                     <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-6">
@@ -71,7 +73,7 @@
                     We understand that having a baby in the NICU can feel overwhelming. That's why we created this space - to be your gentle guide through this journey. Our mission is simple: to provide you with clear, helpful information and connect you with a community that truly understands what you're going through.
                 </p>
                 <div class="mt-8 text-center">
-                    <p class="text-purple-600 font-semibold text-lg">You're not alone in this journey 💜</p>
+                    <p class="text-sage-600 font-semibold text-lg">You're not alone in this journey 💜</p>
                 </div>
             </div>
         </div>
@@ -81,7 +83,7 @@
     <section id="resources" class="py-16 sm:py-24 bg-gray-50">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <div class="inline-flex items-center justify-center w-16 h-16 bg-purple-600 rounded-2xl mb-6">
+                <div class="inline-flex items-center justify-center w-16 h-16 bg-sage-500 rounded-2xl mb-6">
                     <span class="text-white text-2xl">📚</span>
                 </div>
                 <h2 class="text-4xl sm:text-5xl font-bold text-gray-800 mb-6">
@@ -91,181 +93,9 @@
                     Click any resource below to explore detailed information and tools designed just for you
                 </p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Resource Card 1 -->
-                <div class="resource-card bg-white p-6 rounded-2xl shadow-lg border border-purple-100 hover:border-purple-200" role="group" aria-labelledby="nicu101-title">
-                    <div class="w-12 h-12 bg-purple-600 rounded-2xl flex items-center justify-center text-white text-xl mb-4">
-                        📝
-                    </div>
-                    <h3 id="nicu101-title" class="text-xl font-bold text-gray-800 mb-3">NICU 101</h3>
-                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-                        Essential basics for understanding your NICU experience
-                    </p>
-                    <button type="button" class="flex items-center text-purple-600 font-semibold text-sm focus:outline-2 focus:outline-purple-600" aria-expanded="false" aria-controls="details-nicu101">
-                        <span>Learn More</span>
-                        <svg class="w-4 h-4 ml-2 transition-transform" id="arrow-nicu101" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </button>
-                    <div id="details-nicu101" class="resource-details mt-4 pt-4 border-t border-purple-100" role="region" aria-labelledby="nicu101-title">
-                        <h4 class="font-semibold text-gray-800 mb-2">What You'll Find:</h4>
-                        <ul class="text-gray-600 space-y-1 text-sm">
-                            <li>• Common NICU terms explained in simple language</li>
-                            <li>• Understanding medical equipment and monitors</li>
-                            <li>• Daily routines and what to expect</li>
-                            <li>• How to communicate with your care team</li>
-                            <li>• Your rights as a parent in the NICU</li>
-                        </ul>
-                        <a href="#" class="mt-3 text-purple-600 hover:text-purple-800 font-medium text-sm inline-block focus:outline-2 focus:outline-purple-600">
-                            🔗 Access Full Guide
-                        </a>
-                    </div>
-                </div>
-                <!-- Resource Card 2 -->
-                <button class="resource-card bg-white p-6 rounded-2xl shadow-lg border border-pink-100 hover:border-pink-200 text-left w-full" aria-expanded="false" aria-controls="details-stories">
-                    <div class="w-12 h-12 bg-pink-600 rounded-2xl flex items-center justify-center text-white text-xl mb-4">
-                        💕
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Parent Stories</h3>
-                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-                        Real experiences from families who've walked this path
-                    </p>
-                    <div class="flex items-center text-pink-600 font-semibold text-sm">
-                        <span>Read Stories</span>
-                        <svg class="w-4 h-4 ml-2 transition-transform" id="arrow-stories" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </div>
-                    <div id="details-stories" class="resource-details mt-4 pt-4 border-t border-pink-100">
-                        <h4 class="font-semibold text-gray-800 mb-2">Stories of Hope & Strength:</h4>
-                        <ul class="text-gray-600 space-y-1 text-sm">
-                            <li>• First-time parents navigating the unexpected</li>
-                            <li>• Celebrating small victories and milestones</li>
-                            <li>• Coping strategies that really worked</li>
-                            <li>• The journey from admission to going home</li>
-                            <li>• Building bonds with your baby in the NICU</li>
-                        </ul>
-                        <a href="#" class="mt-3 text-pink-600 hover:text-pink-800 font-medium text-sm inline-block">
-                            🔗 Browse All Stories
-                        </a>
-                    </div>
-                </button>
-                <!-- Resource Card 3 -->
-                <button class="resource-card bg-white p-6 rounded-2xl shadow-lg border border-purple-100 hover:border-purple-200 text-left w-full" aria-expanded="false" aria-controls="details-discharge">
-                    <div class="w-12 h-12 bg-purple-600 rounded-2xl flex items-center justify-center text-white text-xl mb-4">
-                        🏠
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Going Home Guide</h3>
-                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-                        Everything you need for a smooth transition home
-                    </p>
-                    <div class="flex items-center text-purple-600 font-semibold text-sm">
-                        <span>Get Ready</span>
-                        <svg class="w-4 h-4 ml-2 transition-transform" id="arrow-discharge" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </div>
-                    <div id="details-discharge" class="resource-details mt-4 pt-4 border-t border-purple-100">
-                        <h4 class="font-semibold text-gray-800 mb-2">Your Discharge Checklist:</h4>
-                        <ul class="text-gray-600 space-y-1 text-sm">
-                            <li>• Preparing your home environment</li>
-                            <li>• Essential supplies and equipment</li>
-                            <li>• Scheduling follow-up appointments</li>
-                            <li>• Understanding medications and feeding</li>
-                            <li>• When to call your pediatrician</li>
-                        </ul>
-                        <a href="#" class="mt-3 text-purple-600 hover:text-purple-800 font-medium text-sm inline-block">
-                            🔗 Download Checklist
-                        </a>
-                    </div>
-                </button>
-                <!-- Additional Resource Cards -->
-                <button class="resource-card bg-white p-6 rounded-2xl shadow-lg border border-pink-100 hover:border-pink-200 text-left w-full" aria-expanded="false" aria-controls="details-wellness">
-                    <div class="w-12 h-12 bg-pink-600 rounded-2xl flex items-center justify-center text-white text-xl mb-4">
-                        🌱
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Parent Wellness</h3>
-                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-                        Taking care of yourself during this challenging time
-                    </p>
-                    <div class="flex items-center text-pink-600 font-semibold text-sm">
-                        <span>Self-Care Tips</span>
-                        <svg class="w-4 h-4 ml-2 transition-transform" id="arrow-wellness" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </div>
-                    <div id="details-wellness" class="resource-details mt-4 pt-4 border-t border-pink-100">
-                        <h4 class="font-semibold text-gray-800 mb-2">Caring for Yourself:</h4>
-                        <ul class="text-gray-600 space-y-1 text-sm">
-                            <li>• Managing stress and emotional overwhelm</li>
-                            <li>• Finding time for rest and nutrition</li>
-                            <li>• Connecting with support networks</li>
-                            <li>• Balancing NICU visits with life</li>
-                            <li>• Professional support resources</li>
-                        </ul>
-                        <a href="#" class="mt-3 text-pink-600 hover:text-pink-800 font-medium text-sm inline-block">
-                            🔗 Wellness Resources
-                        </a>
-                    </div>
-                </button>
-                <!-- Financial Support -->
-                <button class="resource-card bg-white p-6 rounded-2xl shadow-lg border border-purple-100 hover:border-purple-200 text-left w-full" aria-expanded="false" aria-controls="details-financial">
-                    <div class="w-12 h-12 bg-purple-600 rounded-2xl flex items-center justify-center text-white text-xl mb-4">
-                        💰
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Financial Support</h3>
-                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-                        Understanding costs and finding financial assistance
-                    </p>
-                    <div class="flex items-center text-purple-600 font-semibold text-sm">
-                        <span>Get Help</span>
-                        <svg class="w-4 h-4 ml-2 transition-transform" id="arrow-financial" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </div>
-                    <div id="details-financial" class="resource-details mt-4 pt-4 border-t border-purple-100">
-                        <h4 class="font-semibold text-gray-800 mb-2">Financial Resources:</h4>
-                        <ul class="text-gray-600 space-y-1 text-sm">
-                            <li>• Understanding insurance coverage</li>
-                            <li>• Hospital financial assistance programs</li>
-                            <li>• Nonprofit organizations that help families</li>
-                            <li>• Tax considerations and deductions</li>
-                            <li>• Planning for ongoing medical costs</li>
-                        </ul>
-                        <a href="#" class="mt-3 text-purple-600 hover:text-purple-800 font-medium text-sm inline-block">
-                            🔗 Financial Guide
-                        </a>
-                    </div>
-                </button>
-                <!-- Emergency Guide -->
-                <button class="resource-card bg-white p-6 rounded-2xl shadow-lg border border-pink-100 hover:border-pink-200 text-left w-full" aria-expanded="false" aria-controls="details-emergency">
-                    <div class="w-12 h-12 bg-pink-600 rounded-2xl flex items-center justify-center text-white text-xl mb-4">
-                        🆘
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">Emergency Guide</h3>
-                    <p class="text-gray-600 mb-4 text-sm leading-relaxed">
-                        Quick reference for urgent situations and concerns
-                    </p>
-                    <div class="flex items-center text-pink-600 font-semibold text-sm">
-                        <span>Quick Access</span>
-                        <svg class="w-4 h-4 ml-2 transition-transform" id="arrow-emergency" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                        </svg>
-                    </div>
-                    <div id="details-emergency" class="resource-details mt-4 pt-4 border-t border-pink-100">
-                        <h4 class="font-semibold text-gray-800 mb-2">Emergency Information:</h4>
-                        <ul class="text-gray-600 space-y-1 text-sm">
-                            <li>• When to call your NICU immediately</li>
-                            <li>• Signs that require urgent attention</li>
-                            <li>• Important phone numbers to keep handy</li>
-                            <li>• What to bring for unexpected visits</li>
-                            <li>• After-hours contact information</li>
-                        </ul>
-                        <a href="#" class="mt-3 text-pink-600 hover:text-pink-800 font-medium text-sm inline-block">
-                            🔗 Emergency Contacts
-                        </a>
-                    </div>
-                </button>
+            <!-- Component-based Resource Cards Container -->
+            <div id="resource-cards-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Cards will be dynamically generated by the component system -->
             </div>
         </div>
     </section>
@@ -273,22 +103,22 @@
     <!-- Support Section -->
     <section id="support" class="py-12 sm:py-16">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="bg-purple-600 text-white p-8 sm:p-12 rounded-2xl text-center shadow-2xl">
+            <div class="bg-sage-500 text-white p-8 sm:p-12 rounded-2xl text-center shadow-2xl">
                 <div class="text-4xl mb-4">🤝</div>
                 <h2 class="text-3xl sm:text-4xl font-bold mb-4">
                     You're Not Alone
                 </h2>
-                <p class="text-lg sm:text-xl mb-8 text-purple-100">
+                <p class="text-lg sm:text-xl mb-8 text-sage-100">
                     Connect with other families, share your journey, and find the support you need. Our community is here for you, every step of the way.
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <a href="#" class="inline-block bg-white text-purple-600 font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                    <a href="#" class="inline-block bg-white text-sage-600 font-bold py-4 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                         💬 Join Our Community
                     </a>
-                    <a href="#" class="inline-block bg-purple-500 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:bg-purple-400 transition-all duration-300 border-2 border-white/20">
+                    <a href="#" class="inline-block bg-sky-500 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:bg-sky-400 transition-all duration-300 border-2 border-white/20">
                         ✉️ Get In Touch
                     </a>
-                    <a href="#" class="inline-block bg-pink-500 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:bg-pink-400 transition-all duration-300 border-2 border-white/20">
+                    <a href="#" class="inline-block bg-rose-400 text-white font-bold py-4 px-8 rounded-full shadow-lg hover:bg-rose-300 transition-all duration-300 border-2 border-white/20">
                         📞 24/7 Support Line
                     </a>
                 </div>
@@ -296,23 +126,23 @@
             
             <!-- Quick Help Cards -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center border border-purple-100">
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center border border-sage-100">
                     <div class="text-3xl mb-3">📞</div>
                     <h3 class="font-bold text-gray-800 mb-2">Need to Talk?</h3>
                     <p class="text-gray-600 text-sm mb-3">Our trained volunteers are available 24/7 for emotional support</p>
-                    <button class="text-purple-600 font-semibold text-sm hover:text-purple-800">→ Call Now</button>
+                    <button class="text-sage-600 font-semibold text-sm hover:text-sage-700">→ Call Now</button>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center border border-pink-100">
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center border border-sky-100">
                     <div class="text-3xl mb-3">📅</div>
                     <h3 class="font-bold text-gray-800 mb-2">Virtual Meetups</h3>
                     <p class="text-gray-600 text-sm mb-3">Join weekly online support groups with other NICU families</p>
-                    <button class="text-pink-600 font-semibold text-sm hover:text-pink-800">→ View Schedule</button>
+                    <button class="text-sky-600 font-semibold text-sm hover:text-sky-700">→ View Schedule</button>
                 </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg text-center border border-purple-100">
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center border border-sage-100">
                     <div class="text-3xl mb-3">📧</div>
                     <h3 class="font-bold text-gray-800 mb-2">Ask an Expert</h3>
                     <p class="text-gray-600 text-sm mb-3">Get answers from NICU nurses and specialists</p>
-                    <button class="text-purple-600 font-semibold text-sm hover:text-purple-800">→ Submit Question</button>
+                    <button class="text-sage-600 font-semibold text-sm hover:text-sage-700">→ Submit Question</button>
                 </div>
             </div>
         </div>
@@ -322,14 +152,14 @@
     <footer class="bg-gray-800 text-gray-300 py-8">
         <div class="container mx-auto px-4">
             <div class="text-center mb-6">
-                <div class="text-2xl font-bold text-purple-400 mb-2">💜 NICU Compass</div>
+                <div class="text-2xl font-bold text-sage-400 mb-2">💜 NICU Compass</div>
                 <p class="text-gray-400">Guiding families through the NICU journey with love and support</p>
             </div>
             <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6">
-                <a href="#mission" class="text-gray-300 hover:text-purple-400 transition-colors">Our Story</a>
-                <a href="#resources" class="text-gray-300 hover:text-purple-400 transition-colors">Resources</a>
-                <a href="#support" class="text-gray-300 hover:text-purple-400 transition-colors">Community</a>
-                <a href="#" class="text-gray-300 hover:text-purple-400 transition-colors">Privacy Policy</a>
+                <a href="#mission" class="text-gray-300 hover:text-sage-400 transition-colors">Our Story</a>
+                <a href="#resources" class="text-gray-300 hover:text-sage-400 transition-colors">Resources</a>
+                <a href="#support" class="text-gray-300 hover:text-sage-400 transition-colors">Community</a>
+                <a href="#" class="text-gray-300 hover:text-sage-400 transition-colors">Privacy Policy</a>
             </div>
             <div class="text-center text-gray-400 text-sm">
                 <p>&copy; 2024 NICU Compass. All Rights Reserved. Made with 💜 for NICU families</p>
