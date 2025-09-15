@@ -13,8 +13,6 @@ const NICUCompass = {
         NavigationManager.initSmoothScrolling();
         NavigationManager.initMobileMenuListeners();
         
-        // Initialize resource interactions
-        this.initResourceListeners();
         
         // Initialize accessibility features
         AccessibilityManager.initKeyboardNavigation();
@@ -23,38 +21,6 @@ const NICUCompass = {
         console.log('NICU Compass website initialized successfully!');
     },
 
-    /**
-     * Initialize resource card click listeners
-     */
-    initResourceListeners: function() {
-        const resourceCards = document.querySelectorAll('.resource-card button');
-        resourceCards.forEach(button => {
-            button.addEventListener('click', this.toggleResourceDetails.bind(this));
-        });
-    },
-
-    /**
-     * Toggle resource card details
-     */
-    toggleResourceDetails: function(event) {
-        const button = event.target.closest('button');
-        const isExpanded = button.getAttribute('aria-expanded') === 'true';
-        const controlsId = button.getAttribute('aria-controls');
-        const details = document.getElementById(controlsId);
-        const arrow = button.querySelector('svg');
-
-        if (details) {
-            if (isExpanded) {
-                details.classList.remove('show');
-                button.setAttribute('aria-expanded', 'false');
-                if (arrow) arrow.classList.remove('arrow-rotate');
-            } else {
-                details.classList.add('show');
-                button.setAttribute('aria-expanded', 'true');
-                if (arrow) arrow.classList.add('arrow-rotate');
-            }
-        }
-    }
 };
 
 // Navigation Management

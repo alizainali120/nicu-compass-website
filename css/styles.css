@@ -21,36 +21,8 @@ html {
     display: block;
 }
 
-/* Resource card interactions */
-.resource-details {
-    display: none;
-}
-
-.resource-details.show {
-    display: block;
-}
-
 /* Button and link focus states */
 button:focus, a:focus {
     outline: 2px solid #2563eb;
     outline-offset: 2px;
-}
-
-/* Hover effects */
-.hover\:shadow-xl:hover {
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-/* Card animations */
-.resource-card {
-    transition: all 0.3s ease;
-}
-
-.resource-card:hover {
-    transform: translateY(-2px);
-}
-
-/* Arrow rotation animation */
-.arrow-rotate {
-    transform: rotate(180deg);
 }
