@@ -106,6 +106,19 @@ const NavigationManager = {
                 }
             });
         });
+    },
+
+    /**
+     * Initializes event listeners for mobile menu
+     */
+    initMobileMenuListeners: function() {
+        const mobileMenuButton = document.querySelector('[aria-controls="mobile-menu"]');
+        if (mobileMenuButton) {
+            mobileMenuButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                NavigationManager.toggleMobileMenu();
+            });
+        }
     }
 };
 
@@ -163,12 +176,29 @@ const NICUCompassApp = {
         
         // Initialize navigation
         NavigationManager.initSmoothScrolling();
+        NavigationManager.initMobileMenuListeners();
+        
+        // Initialize resource interactions
+        this.initResourceListeners();
         
         // Initialize accessibility features
         AccessibilityManager.initKeyboardNavigation();
         AccessibilityManager.manageFocus();
         
         console.log('NICU Compass website initialized successfully!');
+    },
+
+    /**
+     * Initializes event listeners for resource cards
+     */
+    initResourceListeners: function() {
+        document.querySelectorAll('[aria-controls^="details-"]').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const resourceId = this.getAttribute('aria-controls').replace('details-', '');
+                ResourceManager.toggleResource(resourceId);
+            });
+        });
     }
 };
 
