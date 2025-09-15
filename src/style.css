@@ -8,7 +8,7 @@
   }
   
   body {
-    @apply antialiased font-sans text-slate-700 bg-gradient-to-br from-primary-50 via-blue-50/30 to-white;
+    @apply antialiased font-sans text-slate-700 bg-gradient-to-br from-primary-50 via-primary-100/50 to-white;
   }
 }
 
