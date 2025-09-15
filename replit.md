@@ -1,7 +1,7 @@
 # NICU Compass Website
 
 ## Overview
-NICU Compass is a modern TypeScript website providing support, information, and community for families with babies in the Neonatal Intensive Care Unit. The site offers resources, parent stories, and guidance for navigating the NICU experience with a clean, modern design inspired by sites like Figma, Stripe, and Typeform.
+NICU Compass is a modern React TypeScript website providing support, information, and community for families with babies in the Neonatal Intensive Care Unit. The site offers resources, parent stories, and guidance for navigating the NICU experience with warm, calming pastel colors and a sophisticated yet homey design.
 
 ## Project Structure
 - `src/` - TypeScript source code
@@ -18,10 +18,10 @@ NICU Compass is a modern TypeScript website providing support, information, and 
 - `postcss.config.js` - PostCSS configuration
 
 ## Technology Stack
-- TypeScript with modern ES modules
+- React 18+ with TypeScript and modern ES modules
 - Vite for development server and build tooling
-- Tailwind CSS with PostCSS integration
-- Component-based architecture with TypeScript classes
+- Tailwind CSS with PostCSS integration and custom warm pastel color palette
+- Component-based architecture with React functional components
 - Google Fonts (Inter) for typography
 - Responsive design with mobile-first approach
 
@@ -33,30 +33,31 @@ NICU Compass is a modern TypeScript website providing support, information, and 
 - **Deployment**: Configured for autoscale deployment target
 
 ## Features
-- Modern component-based architecture with TypeScript
+- Modern React component architecture with TypeScript
 - Expandable resource cards with "Learn More" functionality
 - Smooth animations and modern interactions
 - Responsive design optimized for all devices
 - Hero section with clear call-to-action
-- Subtle parenting-focused messaging throughout
-- Clean, accessible design with blue/gray color palette
+- Warm, calming messaging with parenting-focused content
+- Warm pastel color palette with cream, peach, and lavender tones
 - Developer experience with hot reload and type safety
 
 ## User Preferences
-- **Design Style**: Modern and clean, inspired by Figma/Stripe/Typeform
-- **Technology Choice**: TypeScript for better development experience
-- **Content Style**: Subtle parenting themes without being overwhelming
+- **Design Style**: Modern and sophisticated yet homey and calming
+- **Technology Choice**: React + TypeScript for familiar development experience
+- **Color Palette**: Warm pastels (cream, peach, lavender) for "warm blanket vibes"
+- **Content Style**: Supportive parenting themes that feel like home
 - **Interactions**: Expandable cards with smooth animations
 
 ## Recent Changes
-- 2025-09-15: Complete migration to TypeScript/Vite architecture
-  - Migrated from static HTML to modern TypeScript setup
-  - Created component-based architecture with Header and ResourceCard classes
-  - Implemented expandable resource cards with smooth animations
-  - Added modern design with simplified blue/gray color palette
-  - Integrated Tailwind CSS with PostCSS for production-ready styling
-  - Set up Vite development server with hot reload
-  - Added subtle parenting themes throughout the content
+- 2025-09-15: Complete conversion to React + TypeScript architecture
+  - Successfully migrated from vanilla TypeScript class components to React functional components
+  - Maintained all existing functionality (expandable cards, smooth scrolling, responsive design)
+  - Implemented warm pastel color palette with custom Tailwind theme
+  - Created modern React component structure (Header.tsx, ResourceCard.tsx, App.tsx)
+  - Updated entry point from main.ts to main.tsx with React rendering
+  - Preserved all animations and interactions in React state management
+  - Cleaned up old TypeScript class files while maintaining design integrity
 
 ## Notes
 - Uses TypeScript for type safety and better development experience
