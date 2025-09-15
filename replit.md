@@ -39,13 +39,13 @@ NICU Compass is a modern React TypeScript website providing support, information
 - Responsive design optimized for all devices
 - Hero section with clear call-to-action
 - Warm, calming messaging with parenting-focused content
-- Periwinkle blue pastel color palette with soft dreamy tones
+- Misty blue color palette with soft slate and calming blue tones
 - Developer experience with hot reload and type safety
 
 ## User Preferences
 - **Design Style**: Modern and sophisticated yet homey and calming
 - **Technology Choice**: React + TypeScript for familiar development experience
-- **Color Palette**: Periwinkle blue pastels for a calming, dreamy feel
+- **Color Palette**: Misty blue and soft slate colors for a calming, serene feel
 - **Content Style**: Supportive parenting themes that feel like home
 - **Interactions**: Expandable cards with smooth animations
 
@@ -53,7 +53,7 @@ NICU Compass is a modern React TypeScript website providing support, information
 - 2025-09-15: Complete conversion to React + TypeScript architecture
   - Successfully migrated from vanilla TypeScript class components to React functional components
   - Maintained all existing functionality (expandable cards, smooth scrolling, responsive design)
-  - Implemented periwinkle blue pastel color palette with custom Tailwind theme
+  - Implemented misty blue color palette with custom Tailwind theme
   - Created modern React component structure (Header.tsx, ResourceCard.tsx, App.tsx)
   - Updated entry point from main.ts to main.tsx with React rendering
   - Preserved all animations and interactions in React state management
