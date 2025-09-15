@@ -250,8 +250,11 @@ class NICUCompassApp {
   private setupSmoothScrolling(): void {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', (e) => {
+        const href = anchor.getAttribute('href');
+        if (!href || href === '#') return;
+        
         e.preventDefault();
-        const target = document.querySelector(anchor.getAttribute('href')!);
+        const target = document.querySelector(href);
         if (target) {
           target.scrollIntoView({
             behavior: 'smooth',

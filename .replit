@@ -15,15 +15,15 @@ author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "workflow.run"
-args = "Static Website Server"
+args = "TypeScript Dev Server"
 
 [[workflows.workflow]]
-name = "Static Website Server"
+name = "TypeScript Dev Server"
 author = "agent"
 
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "python -m http.server 5000 --bind 0.0.0.0"
+args = "npm run dev"
 waitForPort = 5000
 
 [workflows.workflow.metadata]
@@ -34,7 +34,7 @@ localPort = 5000
 externalPort = 80
 
 [[ports]]
-localPort = 41165
+localPort = 5001
 externalPort = 3000
 
 [deployment]
