@@ -8,7 +8,7 @@
   }
   
   body {
-    @apply antialiased font-sans text-slate-800 bg-gradient-to-br from-primary-50 to-white;
+    @apply antialiased font-sans text-slate-700 bg-gradient-to-br from-primary-50 via-blue-50/30 to-white;
   }
 }
 
@@ -18,11 +18,11 @@
   }
   
   .btn-primary {
-    @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500 focus:ring-offset-2 shadow-lg hover:shadow-xl;
+    @apply bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500 focus:ring-offset-2 shadow-lg hover:shadow-xl;
   }
   
   .btn-secondary {
-    @apply bg-white/90 text-primary-700 border border-primary-300 hover:bg-primary-50 focus:ring-primary-500 focus:ring-offset-2 shadow-sm hover:shadow-md backdrop-blur-sm;
+    @apply bg-white/90 text-primary-600 border border-primary-200 hover:bg-primary-50 focus:ring-primary-500 focus:ring-offset-2 shadow-sm hover:shadow-md backdrop-blur-sm;
   }
   
   .card {
