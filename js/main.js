@@ -1,4 +1,4 @@
-// NICU Compass Website JavaScript Modules
+ // NICU Compass Website JavaScript Modules
 
 /**
  * Resource Management Module
