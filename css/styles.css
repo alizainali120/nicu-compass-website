@@ -1,87 +1,56 @@
 /* NICU Compass Website Styles */
 
-/* Import component colors */
-@import url('components/colors.css');
-
 /* Base Styles */
 body {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(135deg, #f8faf8 0%, #f5f9ff 50%, #f0fdfa 100%);
+    background: #fafafa;
     color: #374151;
 }
 
-/* Resource Card Styles */
-.resource-card {
-    transition: all 0.3s ease;
-    cursor: pointer;
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
 }
 
-.resource-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-}
-
-.resource-card:focus {
-    outline: 2px solid #a855f7;
-    outline-offset: 2px;
-}
-
-/* Resource Details Animation */
-.resource-details {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease;
-}
-
-.resource-details.expanded {
-    max-height: 500px;
-}
-
-/* Mobile Menu Styles */
+/* Mobile menu (hidden by default) */
 .mobile-menu {
     display: none;
 }
 
-.mobile-menu.active {
+.mobile-menu.show {
     display: block;
 }
 
-/* Focus Styles for Accessibility */
-button:focus-visible {
-    outline: 2px solid #a855f7;
+/* Resource card interactions */
+.resource-details {
+    display: none;
+}
+
+.resource-details.show {
+    display: block;
+}
+
+/* Button and link focus states */
+button:focus, a:focus {
+    outline: 2px solid #2563eb;
     outline-offset: 2px;
 }
 
-a:focus-visible {
-    outline: 2px solid #a855f7;
-    outline-offset: 2px;
+/* Hover effects */
+.hover\:shadow-xl:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-/* Custom Utility Classes */
-.gradient-text {
-    background: linear-gradient(to right, #9333ea, #ec4899);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-}
-
-.card-shadow {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-.card-shadow-lg {
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
-
-/* Smooth transitions */
-.transition-all {
+/* Card animations */
+.resource-card {
     transition: all 0.3s ease;
 }
 
-.transition-colors {
-    transition: color 0.2s ease;
+.resource-card:hover {
+    transform: translateY(-2px);
 }
 
-.transition-transform {
-    transition: transform 0.3s ease;
+/* Arrow rotation animation */
+.arrow-rotate {
+    transform: rotate(180deg);
 }
