@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 app.use(express.static(path.join(__dirname, 'dist'), {
   setHeaders: (res, filePath) => {
-    if (filePath.endsWith('.js')) {
+    if (filePath.endsWith('.js') || filePath.endsWith('.mjs') || filePath.endsWith('.cjs')) {
       res.setHeader('Content-Type', 'application/javascript');
     }
   }
