@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import mime from 'mime';
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -8,8 +9,9 @@ const __dirname = path.dirname(__filename);
 
 app.use(express.static(path.join(__dirname, 'dist'), {
   setHeaders: (res, filePath) => {
-    if (filePath.endsWith('.js') || filePath.endsWith('.mjs') || filePath.endsWith('.cjs')) {
-      res.setHeader('Content-Type', 'application/javascript');
+    const type = mime.getType(filePath);
+    if (type) {
+      res.setHeader('Content-Type', type);
     }
   }
 }));
