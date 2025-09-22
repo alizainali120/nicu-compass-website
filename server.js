@@ -12,10 +12,7 @@ const __dirname = path.dirname(__filename);
 // Serve static files from the 'dist' directory
 app.use(express.static(path.join(__dirname, 'dist'), {
   setHeaders: (res, filePath) => {
-    const type = mime.getType(filePath);
-    if (type) {
-      res.setHeader('Content-Type', type);
-    }
+    res.setHeader('Content-Type', 'application/javascript');
   }
 }));
 
