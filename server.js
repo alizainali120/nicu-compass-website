@@ -3,7 +3,6 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import mime from 'mime';
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
