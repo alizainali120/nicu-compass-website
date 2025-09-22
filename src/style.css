@@ -8,7 +8,7 @@
   }
   
   body {
-    @apply antialiased font-sans text-accent-800 bg-gradient-to-br from-primary-50 via-misty-50/60 to-accent-50/40;
+    @apply antialiased font-sans text-accent-800 bg-misty-50/70;
   }
 }
 

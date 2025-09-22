@@ -17,7 +17,7 @@ export const resourceCards: ResourceCard[] = [
         'Your rights and role as a parent in the NICU'
       ],
       actionText: 'Start Learning',
-      actionLink: '#nicu-basics-guide'
+      actionLink: '/nicu-basics-guide'
     }
   },
   {
@@ -36,7 +36,7 @@ export const resourceCards: ResourceCard[] = [
         'Building precious bonds in the NICU environment'
       ],
       actionText: 'Read Stories',
-      actionLink: '#parent-stories'
+      actionLink: '/parent-stories'
     }
   },
   {
@@ -55,7 +55,7 @@ export const resourceCards: ResourceCard[] = [
         'When to contact your pediatrician after discharge'
       ],
       actionText: 'Get Prepared',
-      actionLink: '#discharge-planning'
+      actionLink: '/discharge-planning'
     }
   },
   {
@@ -74,7 +74,7 @@ export const resourceCards: ResourceCard[] = [
         'When and how to seek professional support'
       ],
       actionText: 'Learn More',
-      actionLink: '#parent-wellness'
+      actionLink: '/parent-wellness'
     }
   },
   {
@@ -93,7 +93,7 @@ export const resourceCards: ResourceCard[] = [
         'Planning for ongoing medical and therapy costs'
       ],
       actionText: 'Get Guidance',
-      actionLink: '#financial-resources'
+      actionLink: '/financial-resources'
     }
   },
   {
@@ -112,7 +112,7 @@ export const resourceCards: ResourceCard[] = [
         'Crisis support and mental health resources'
       ],
       actionText: 'Get Help Now',
-      actionLink: '#emergency-support'
+      actionLink: '/emergency-support'
     }
   }
 ];

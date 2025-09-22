@@ -1,5 +1,6 @@
 import React from 'react'
 import { ResourceCard as ResourceCardType } from '../types'
+import { Link } from 'react-router-dom'
 
 interface ResourceCardProps {
   card: ResourceCardType
@@ -78,8 +79,8 @@ const ResourceCard: React.FC<ResourceCardProps> = ({ card, isExpanded, onToggle 
                 </li>
               ))}
             </ul>
-            <a
-              href={card.details.actionLink}
+            <Link
+              to={card.details.actionLink}
               className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium text-sm transition-colors"
               onClick={(e) => e.stopPropagation()}
             >
@@ -87,7 +88,7 @@ const ResourceCard: React.FC<ResourceCardProps> = ({ card, isExpanded, onToggle 
               <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
               </svg>
-            </a>
+            </Link>
           </div>
         )}
       </div>

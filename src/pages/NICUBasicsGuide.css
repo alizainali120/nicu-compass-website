@@ -1,0 +1,13 @@
+.nicu-guide-page-bg {
+  min-height: 100vh;
+}
+
+.nicu-guide-title {
+  color: #0369a1; /* blue accent */
+  letter-spacing: 0.02em;
+}
+
+.nicu-guide-content {
+  /*background: #fff; /* white card */
+  /* border-radius: 1rem;*/
+}
