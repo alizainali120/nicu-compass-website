@@ -1,3 +1,8 @@
+export interface ArticleLink {
+  title: string;
+  link: string;
+}
+
 export interface ResourceCard {
   id: string;
   title: string;
@@ -6,9 +11,10 @@ export interface ResourceCard {
   category: 'guidance' | 'community' | 'practical' | 'wellness';
   details: {
     subtitle: string;
-    content: string[];
-    actionText: string;
-    actionLink: string;
+    content?: string[];
+    articles?: ArticleLink[];
+    actionText?: string;
+    actionLink?: string;
   };
 }
 

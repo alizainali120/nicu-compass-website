@@ -9,11 +9,12 @@ export const resourceCards: ResourceCard[] = [
     category: 'guidance',
     details: {
       subtitle: 'Articles & Guides',
-      content: [
-        'Understanding Your Baby\'s NICU Care Team'
-      ],
-      actionText: 'Start Learning',
-      actionLink: '/nicu-basics-guide'
+      articles: [
+        {
+          title: 'Understanding Your Baby\'s NICU Care Team',
+          link: '/nicu-basics-guide'
+        }
+      ]
     }
   },
   {

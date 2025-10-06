@@ -71,24 +71,50 @@ const ResourceCard: React.FC<ResourceCardProps> = ({ card, isExpanded, onToggle 
         {isExpanded && (
           <div className="mt-6 pt-6 border-t border-gray-100 animate-slide-up">
             <h4 className="font-semibold text-gray-900 mb-3">{card.details.subtitle}</h4>
-            <ul className="space-y-2 text-gray-600 text-sm mb-4">
-              {card.details.content.map((item, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="text-primary-500 mr-2 mt-0.5">•</span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-            <Link
-              to={card.details.actionLink}
-              className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium text-sm transition-colors"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {card.details.actionText}
-              <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
+
+            {/* Article Links */}
+            {card.details.articles && (
+              <ul className="space-y-2 text-gray-600 text-sm mb-4">
+                {card.details.articles.map((article, index) => (
+                  <li key={index}>
+                    <Link
+                      to={article.link}
+                      className="flex items-start hover:text-primary-600 transition-colors"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <span className="text-primary-500 mr-2 mt-0.5">•</span>
+                      <span className="underline">{article.title}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {/* Regular Content (for other cards) */}
+            {card.details.content && (
+              <ul className="space-y-2 text-gray-600 text-sm mb-4">
+                {card.details.content.map((item, index) => (
+                  <li key={index} className="flex items-start">
+                    <span className="text-primary-500 mr-2 mt-0.5">•</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {/* Action Link (if present) */}
+            {card.details.actionText && card.details.actionLink && (
+              <Link
+                to={card.details.actionLink}
+                className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium text-sm transition-colors"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {card.details.actionText}
+                <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </Link>
+            )}
           </div>
         )}
       </div>
