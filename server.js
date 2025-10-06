@@ -14,8 +14,7 @@ app.use(express.static(path.join(__dirname, 'dist'), {
   setHeaders: (res, filePath) => {
     const type = mime.getType(filePath);
     if (type) {
-      //res.setHeader('Content-Type', type);
-      res.setHeader('Content-Type', 'application/javascript');
+      res.setHeader('Content-Type', type);
     }
   }
 }));
