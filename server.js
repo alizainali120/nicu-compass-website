@@ -11,9 +11,14 @@ const __dirname = path.dirname(__filename);
 // Serve static files from the 'dist' directory
 app.use(express.static(path.join(__dirname, 'dist'), {
   setHeaders: (res, filePath) => {
-    // Always set correct MIME type for JavaScript files
-    if (filePath.endsWith('.js')) {
-      res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
+    // Handle both .js and .mjs files
+    if (filePath.endsWith('.js') || filePath.endsWith('.mjs')) {
+      // Set proper MIME type for ES modules
+      if (filePath.includes('assets/') || filePath.includes('?v=')) {
+        res.setHeader('Content-Type', 'text/javascript; charset=utf-8');
+      } else {
+        res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
+      }
     }
   }
 }));
