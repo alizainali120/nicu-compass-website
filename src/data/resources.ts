@@ -8,13 +8,9 @@ export const resourceCards: ResourceCard[] = [
     icon: '📖',
     category: 'guidance',
     details: {
-      subtitle: 'Your foundational guide',
+      subtitle: 'Articles & Guides',
       content: [
-        'Understanding NICU terminology in simple terms',
-        'What to expect during your daily visits',
-        'How to communicate effectively with your care team',
-        'Reading monitors and understanding medical equipment',
-        'Your rights and role as a parent in the NICU'
+        'Understanding Your Baby\'s NICU Care Team'
       ],
       actionText: 'Start Learning',
       actionLink: '/nicu-basics-guide'
