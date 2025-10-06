@@ -3,6 +3,7 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import mimeTypes from 'mime-types';
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -11,14 +12,16 @@ const __dirname = path.dirname(__filename);
 // Serve static files from the 'dist' directory
 app.use(express.static(path.join(__dirname, 'dist'), {
   setHeaders: (res, filePath) => {
-    // Handle both regular .js files and module scripts with query params
-    if (filePath.endsWith('.js') || filePath.includes('.js?v=')) {
-      // Set proper MIME type for JavaScript modules
-      if (filePath.includes('?v=') || filePath.includes('assets/')) {
-        res.setHeader('Content-Type', 'text/javascript; charset=utf-8');
-      } else {
-        res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
-      }
+    // Handle JavaScript modules
+    if (filePath.includes('assets/') && filePath.endsWith('.js')) {
+      res.setHeader('Content-Type', 'text/javascript; charset=utf-8');
+      return;
+    }
+    
+    // Handle other files using proper MIME type detection
+    const mimeType = mimeTypes.lookup(filePath);
+    if (mimeType) {
+      res.setHeader('Content-Type', `${mimeType}; charset=utf-8`);
     }
   }
 }));
