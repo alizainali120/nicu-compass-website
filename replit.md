@@ -50,6 +50,15 @@ NICU Compass is a modern React TypeScript website providing support, information
 - **Interactions**: Expandable cards with smooth animations
 
 ## Recent Changes
+- 2025-10-06: Enhanced styling for NICU Basics Guide and resources grid
+  - Updated NICU Basics Guide with modern frosted card styling and backdrop blur effects
+  - Replaced sky-* colors with primary-* palette for consistent theming
+  - Added gradient background (linear-gradient from misty-50 to misty-100) to NICU pages
+  - Improved resource grid links with circular icon buttons and smooth hover animations
+  - Enhanced visual hierarchy with rounded bullet points, borders, and improved spacing
+  - Added modern hover effects and transitions for better user interaction
+  - Updated NICUBasicsGuide.css to align with global card-based layout system
+  
 - 2025-09-15: Complete conversion to React + TypeScript architecture
   - Successfully migrated from vanilla TypeScript class components to React functional components
   - Maintained all existing functionality (expandable cards, smooth scrolling, responsive design)
