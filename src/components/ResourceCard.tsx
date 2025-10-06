@@ -69,21 +69,25 @@ const ResourceCard: React.FC<ResourceCardProps> = ({ card, isExpanded, onToggle 
         
         {/* Expanded Content */}
         {isExpanded && (
-          <div className="mt-6 pt-6 border-t border-gray-100 animate-slide-up">
-            <h4 className="font-semibold text-gray-900 mb-3">{card.details.subtitle}</h4>
+          <div className="mt-6 pt-6 border-t border-primary-100 animate-slide-up">
+            <h4 className="font-semibold text-gray-900 mb-4 text-base">{card.details.subtitle}</h4>
 
             {/* Article Links */}
             {card.details.articles && (
-              <ul className="space-y-2 text-gray-600 text-sm mb-4">
+              <ul className="space-y-3 mb-4">
                 {card.details.articles.map((article, index) => (
                   <li key={index}>
                     <Link
                       to={article.link}
-                      className="flex items-start hover:text-primary-600 transition-colors"
+                      className="group/link flex items-start p-3 -mx-3 rounded-lg hover:bg-primary-50/50 transition-all duration-200"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      <span className="text-primary-500 mr-2 mt-0.5">•</span>
-                      <span className="underline">{article.title}</span>
+                      <span className="flex-shrink-0 w-6 h-6 rounded-full bg-primary-100 text-primary-600 flex items-center justify-center mr-3 mt-0.5 group-hover/link:bg-primary-500 group-hover/link:text-white transition-colors">
+                        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                      </span>
+                      <span className="text-gray-700 group-hover/link:text-primary-700 font-medium text-sm leading-relaxed transition-colors">{article.title}</span>
                     </Link>
                   </li>
                 ))}
@@ -92,11 +96,11 @@ const ResourceCard: React.FC<ResourceCardProps> = ({ card, isExpanded, onToggle 
 
             {/* Regular Content (for other cards) */}
             {card.details.content && (
-              <ul className="space-y-2 text-gray-600 text-sm mb-4">
+              <ul className="space-y-3 mb-4">
                 {card.details.content.map((item, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="text-primary-500 mr-2 mt-0.5">•</span>
-                    <span>{item}</span>
+                  <li key={index} className="flex items-start group/item p-2 -mx-2 rounded-lg hover:bg-primary-50/30 transition-colors">
+                    <span className="flex-shrink-0 w-1.5 h-1.5 rounded-full bg-primary-400 mr-3 mt-2"></span>
+                    <span className="text-gray-600 text-sm leading-relaxed">{item}</span>
                   </li>
                 ))}
               </ul>
@@ -106,11 +110,11 @@ const ResourceCard: React.FC<ResourceCardProps> = ({ card, isExpanded, onToggle 
             {card.details.actionText && card.details.actionLink && (
               <Link
                 to={card.details.actionLink}
-                className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium text-sm transition-colors"
+                className="inline-flex items-center px-4 py-2 bg-primary-50 hover:bg-primary-100 text-primary-700 hover:text-primary-800 font-medium text-sm rounded-lg transition-all duration-200 group/action border border-primary-200 hover:border-primary-300"
                 onClick={(e) => e.stopPropagation()}
               >
                 {card.details.actionText}
-                <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="ml-2 w-4 h-4 group-hover/action:translate-x-0.5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
                 </svg>
               </Link>
