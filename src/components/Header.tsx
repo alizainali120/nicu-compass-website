@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { NavigationItem } from '../types'
 
 interface HeaderProps {
@@ -17,21 +18,21 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
       <div className="container-padding">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center">
-            <div className="text-2xl font-bold text-gray-900">
+          <Link to="/" className="flex items-center group">
+            <div className="text-2xl font-bold text-gray-900 group-hover:text-primary-600 transition-colors">
               NICU Compass
             </div>
             <div className="ml-3 px-2 py-1 bg-primary-50 text-primary-700 text-xs font-medium rounded-full">
               For Parents
             </div>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
             {navigationItems.map(item => (
               <a
                 key={item.id}
-                href={item.href}
+                href={item.href.startsWith('#') ? `/${item.href}` : item.href}
                 className="px-4 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all font-medium"
               >
                 {item.label}
@@ -64,7 +65,7 @@ const Header: React.FC<HeaderProps> = ({ navigationItems }) => {
             {navigationItems.map(item => (
               <a
                 key={item.id}
-                href={item.href}
+                href={item.href.startsWith('#') ? `/${item.href}` : item.href}
                 className="block px-4 py-3 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-lg transition-all"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
