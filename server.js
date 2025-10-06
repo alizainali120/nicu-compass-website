@@ -3,7 +3,6 @@
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import mime from 'mime';
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -12,9 +11,14 @@ const __dirname = path.dirname(__filename);
 // Serve static files from the 'dist' directory
 app.use(express.static(path.join(__dirname, 'dist'), {
   setHeaders: (res, filePath) => {
-    const type = mime.getType(filePath);
-    if (type) {
-      res.setHeader('Content-Type', type);
+    // Handle JavaScript modules
+    if (filePath.endsWith('.js') || filePath.endsWith('.mjs')) {
+      // Check if it's a module (Vite adds ?v= query param for modules)
+      if (filePath.includes('?v=') || filePath.includes('assets/')) {
+        res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
+      } else {
+        res.setHeader('Content-Type', 'application/javascript');
+      }
     }
   }
 }));
