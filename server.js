@@ -11,14 +11,9 @@ const __dirname = path.dirname(__filename);
 // Serve static files from the 'dist' directory
 app.use(express.static(path.join(__dirname, 'dist'), {
   setHeaders: (res, filePath) => {
-    // Handle JavaScript modules
-    if (filePath.endsWith('.js') || filePath.endsWith('.mjs')) {
-      // Check if it's a module (Vite adds ?v= query param for modules)
-      if (filePath.includes('?v=') || filePath.includes('assets/')) {
-        res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
-      } else {
-        res.setHeader('Content-Type', 'application/javascript');
-      }
+    // Always set correct MIME type for JavaScript files
+    if (filePath.endsWith('.js')) {
+      res.setHeader('Content-Type', 'application/javascript; charset=utf-8');
     }
   }
 }));
