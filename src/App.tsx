@@ -93,7 +93,7 @@ const App: React.FC = () => {
                   <div className="max-w-4xl mx-auto">
                     <div className="card p-12 text-center">
                       <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                        Created by Parents, for Parents
+                        Our Story
                       </h2>
                       <div className="text-lg text-gray-600 leading-relaxed mb-8 space-y-4">
                         <p>
