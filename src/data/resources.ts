@@ -13,6 +13,10 @@ export const resourceCards: ResourceCard[] = [
         {
           title: 'Understanding Your Baby\'s NICU Care Team',
           link: '/nicu-basics-guide'
+        },
+        {
+          title: 'Feeding in the NICU: From Tube to Breast or Bottle',
+          link: '/feeding-in-nicu'
         }
       ]
     }
