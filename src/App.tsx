@@ -95,12 +95,20 @@ const App: React.FC = () => {
                       <h2 className="text-4xl font-bold text-gray-900 mb-6">
                         Created by Parents, for Parents
                       </h2>
-                      <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                        We understand that having a baby in the NICU can feel overwhelming. Every question, 
-                        worry, and hope you're experiencing is valid. That's why we created this space - to be 
-                        your gentle guide through this journey, offering clear information and connecting you 
-                        with a community that truly understands.
-                      </p>
+                      <div className="text-lg text-gray-600 leading-relaxed mb-8 space-y-4">
+                        <p>
+                          As a neonatologist, I've had the privilege of walking alongside many families on their NICU journey. I've seen firsthand how overwhelming this world can feel — filled with new decisions, unfamiliar terms, and a steady flow of doctors, nurses, and specialists.
+                        </p>
+                        <p>
+                          It's natural to feel uncertain. To sit by your baby and wonder what to ask. To feel as though the conversations around you are happening in another language. I've witnessed the weight parents carry — balancing appointments, emotions, and the daily challenges of NICU life — all while wishing they could do even more for their little one. Yet, alongside these challenges, I've also seen remarkable resilience. NICU babies are true fighters, and behind them are parents whose strength and love guide them through. Still, no one should have to walk this journey alone.
+                        </p>
+                        <p>
+                          That's why I created NICUCompass. My hope is to make the NICU feel a little less daunting. Here, you'll find clear guides to your baby's care, gentle resources to help you feel more confident, and activities, stories, and tools you can share with your little one. More than just information, this is a space for comfort, support, and connection.
+                        </p>
+                        <p>
+                          Our mission is simple: to remind every NICU parent that you are not alone. NICUCompass is here to walk beside you — to give you space to learn, room to breathe, and a community that truly understands. Together, we can make this journey feel just a little lighter.
+                        </p>
+                      </div>
                       <div className="inline-flex items-center px-4 py-2 bg-primary-50 text-primary-700 rounded-full font-medium">
                         You're not walking this path alone
                       </div>
