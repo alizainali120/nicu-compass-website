@@ -57,7 +57,7 @@ const App: React.FC = () => {
   }, [])
 
   return (
-    <Router basename="/nicu-compass-website">
+    <Router basename={import.meta.env.BASE_URL}>
       <Header navigationItems={navigationItems} />
       
       <Routes>
