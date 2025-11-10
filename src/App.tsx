@@ -11,6 +11,7 @@ import DonorMilkFAQ from './pages/DonorMilkFAQ'
 import ConnectionsGame from './pages/ConnectionsGame'
 import ConnectionsGame2 from './pages/ConnectionsGame2'
 import WordMatchGames from './pages/WordMatchGames'
+import NICUTermChallenge from './pages/NICUTermChallenge'
 import ParentStories from './pages/ParentStories'
 import DischargePlanning from './pages/DischargePlanning'
 import ParentWellness from './pages/ParentWellness'
@@ -238,6 +239,7 @@ const App: React.FC = () => {
         <Route path="/word-match-games" element={<WordMatchGames />} />
         <Route path="/connections-game" element={<ConnectionsGame />} />
         <Route path="/connections-game-2" element={<ConnectionsGame2 />} />
+        <Route path="/nicu-term-challenge" element={<NICUTermChallenge />} />
         <Route path="/parent-stories" element={<ParentStories />} />
         <Route path="/discharge-planning" element={<DischargePlanning />} />
         <Route path="/parent-wellness" element={<ParentWellness />} />

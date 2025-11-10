@@ -22,6 +22,12 @@ const games: Game[] = [
     title: 'Baby Care & Bonding',
     link: '/connections-game-2',
     description: 'Discover warmth devices, milk collection methods, bonding activities, and breast milk benefits'
+  },
+  {
+    id: 3,
+    title: 'NICU Term Challenge',
+    link: '/nicu-term-challenge',
+    description: 'Guess the NICU medical term - a fun word puzzle to learn important vocabulary'
   }
 ]
 
@@ -80,7 +86,7 @@ const WordMatchGames: React.FC = () => {
                   to={game.link}
                   className="inline-flex items-center gap-2 bg-primary-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-primary-700 transition-colors shadow-md hover:shadow-lg"
                 >
-                  Play Game {game.id} →
+                  {game.id === 3 ? 'Start Challenge →' : `Play Game ${game.id} →`}
                 </Link>
               </div>
             </div>
