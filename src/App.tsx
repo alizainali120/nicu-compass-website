@@ -9,6 +9,7 @@ import FeedingInNICU from './pages/FeedingInNICU'
 import MilkComparison from './pages/MilkComparison'
 import DonorMilkFAQ from './pages/DonorMilkFAQ'
 import ConnectionsGame from './pages/ConnectionsGame'
+import ConnectionsGame2 from './pages/ConnectionsGame2'
 import ParentStories from './pages/ParentStories'
 import DischargePlanning from './pages/DischargePlanning'
 import ParentWellness from './pages/ParentWellness'
@@ -234,6 +235,7 @@ const App: React.FC = () => {
         <Route path="/milk-comparison" element={<MilkComparison />} />
         <Route path="/donor-milk-faq" element={<DonorMilkFAQ />} />
         <Route path="/connections-game" element={<ConnectionsGame />} />
+        <Route path="/connections-game-2" element={<ConnectionsGame2 />} />
         <Route path="/parent-stories" element={<ParentStories />} />
         <Route path="/discharge-planning" element={<DischargePlanning />} />
         <Route path="/parent-wellness" element={<ParentWellness />} />
