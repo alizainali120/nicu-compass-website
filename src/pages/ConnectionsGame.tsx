@@ -8,6 +8,7 @@ interface Category {
   words: string[]
   color: string
   difficulty: string
+  explanation: string
 }
 
 const categories: Category[] = [
@@ -15,25 +16,29 @@ const categories: Category[] = [
     name: 'Breathing Support',
     words: ['CPAP', 'high flow', 'ventilator', 'nasal cannula'],
     color: 'bg-yellow-400',
-    difficulty: 'Easy'
+    difficulty: 'Easy',
+    explanation: 'Devices that help your baby breathe or keep lungs open'
   },
   {
     name: 'Feeding Methods',
     words: ['breast', 'bottle', 'orogastric tube', 'nasogastric tube'],
     color: 'bg-green-500',
-    difficulty: 'Medium'
+    difficulty: 'Medium',
+    explanation: 'Ways to get milk into the stomach'
   },
   {
     name: 'Vital Signs',
     words: ['heart rate', 'respiratory rate', 'blood pressure', 'temperature'],
     color: 'bg-blue-500',
-    difficulty: 'Hard'
+    difficulty: 'Hard',
+    explanation: 'Vital signs monitored in the NICU'
   },
   {
     name: 'NICU Care Team',
     words: ['neonatologist', 'respiratory therapist', 'nurse', 'dietician'],
     color: 'bg-purple-600',
-    difficulty: 'Tricky'
+    difficulty: 'Tricky',
+    explanation: 'People you will see at your baby\'s bedside'
   }
 ]
 
@@ -201,8 +206,11 @@ const ConnectionsGame: React.FC = () => {
                     <h3 className="font-bold text-lg mb-2 uppercase tracking-wide">
                       {category.name}
                     </h3>
-                    <p className="font-medium">
+                    <p className="font-medium mb-2">
                       {category.words.join(', ')}
+                    </p>
+                    <p className="text-sm opacity-90 italic">
+                      {category.explanation}
                     </p>
                   </div>
                 ))}
@@ -279,8 +287,11 @@ const ConnectionsGame: React.FC = () => {
                       <h3 className="font-bold text-lg mb-2 uppercase tracking-wide">
                         {category.name}
                       </h3>
-                      <p className="font-medium">
+                      <p className="font-medium mb-2">
                         {category.words.join(', ')}
+                      </p>
+                      <p className="text-sm opacity-90 italic">
+                        {category.explanation}
                       </p>
                     </div>
                   ))}
