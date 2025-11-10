@@ -30,6 +30,19 @@ export const resourceCards: ResourceCard[] = [
     }
   },
   {
+    id: 'interactive-tools',
+    title: 'Interactive Tools',
+    description: 'Helpful calculators, trackers, and interactive resources to support your NICU journey',
+    icon: '🛠️',
+    category: 'practical',
+    details: {
+      subtitle: 'Tools & Resources',
+      articles: [
+        
+      ]
+    }
+  },
+  {
     id: 'parent-stories',
     title: 'Real Family Journeys',
     description: 'Find hope and connection through stories from parents who understand your experience',
