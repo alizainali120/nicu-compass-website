@@ -21,6 +21,10 @@ export const resourceCards: ResourceCard[] = [
         {
           title: 'Breast Milk vs. Donor Milk vs. Formula',
           link: '/milk-comparison'
+        },
+        {
+          title: 'Donor Milk in the NICU: What Parents Often Ask',
+          link: '/donor-milk-faq'
         }
       ]
     }
