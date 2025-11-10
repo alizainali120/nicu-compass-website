@@ -10,6 +10,7 @@ import MilkComparison from './pages/MilkComparison'
 import DonorMilkFAQ from './pages/DonorMilkFAQ'
 import ConnectionsGame from './pages/ConnectionsGame'
 import ConnectionsGame2 from './pages/ConnectionsGame2'
+import WordMatchGames from './pages/WordMatchGames'
 import ParentStories from './pages/ParentStories'
 import DischargePlanning from './pages/DischargePlanning'
 import ParentWellness from './pages/ParentWellness'
@@ -234,6 +235,7 @@ const App: React.FC = () => {
         <Route path="/feeding-in-nicu" element={<FeedingInNICU />} />
         <Route path="/milk-comparison" element={<MilkComparison />} />
         <Route path="/donor-milk-faq" element={<DonorMilkFAQ />} />
+        <Route path="/word-match-games" element={<WordMatchGames />} />
         <Route path="/connections-game" element={<ConnectionsGame />} />
         <Route path="/connections-game-2" element={<ConnectionsGame2 />} />
         <Route path="/parent-stories" element={<ParentStories />} />
