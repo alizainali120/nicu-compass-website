@@ -15,28 +15,28 @@ const categories: Category[] = [
   {
     name: 'Breathing Support',
     words: ['CPAP', 'high flow', 'ventilator', 'nasal cannula'],
-    color: 'bg-yellow-400',
+    color: 'bg-teal-500',
     difficulty: 'Easy',
     explanation: 'Devices that help your baby breathe or keep lungs open'
   },
   {
     name: 'Feeding Methods',
     words: ['breast', 'bottle', 'orogastric tube', 'nasogastric tube'],
-    color: 'bg-green-500',
+    color: 'bg-amber-500',
     difficulty: 'Medium',
     explanation: 'Ways to get milk into the stomach'
   },
   {
     name: 'Vital Signs',
     words: ['heart rate', 'respiratory rate', 'blood pressure', 'temperature'],
-    color: 'bg-blue-500',
+    color: 'bg-rose-500',
     difficulty: 'Hard',
     explanation: 'Vital signs monitored in the NICU'
   },
   {
     name: 'NICU Care Team',
     words: ['neonatologist', 'respiratory therapist', 'nurse', 'dietician'],
-    color: 'bg-purple-600',
+    color: 'bg-indigo-600',
     difficulty: 'Tricky',
     explanation: 'People you will see at your baby\'s bedside'
   }
@@ -160,14 +160,21 @@ const ConnectionsGame: React.FC = () => {
               Stories & Activities
             </div>
 
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 text-primary-700">
-              NICU Connections Game
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 text-primary-700">
+              NICU Word Match
             </h1>
+            
+            <p className="text-lg text-accent-600 mb-8">
+              A fun learning game for NICU families
+            </p>
 
-            <div className="card p-6 sm:p-8 mb-8">
-              <p className="text-accent-700 leading-relaxed mb-6">
-                Group the 16 words into 4 categories of related NICU terms. Each category has 4 words. You have 4 mistakes allowed. Good luck!
-              </p>
+            <div className="card p-6 sm:p-8 mb-8 border-2 border-primary-200">
+              <div className="bg-primary-50 rounded-lg p-4 mb-6">
+                <h2 className="font-bold text-primary-700 mb-2">How to Play:</h2>
+                <p className="text-accent-700 leading-relaxed">
+                  Find groups of 4 related NICU terms from the 16 words below. Select 4 words and tap "Check Answer" to see if they match a category. You get 4 tries!
+                </p>
+              </div>
 
               {message && (
                 <div className={`p-4 rounded-lg mb-6 text-center font-medium ${
@@ -183,17 +190,23 @@ const ConnectionsGame: React.FC = () => {
                 </div>
               )}
 
-              <div className="flex items-center justify-center gap-2 mb-6">
-                <span className="text-accent-700 font-medium">Mistakes remaining:</span>
-                <div className="flex gap-1">
-                  {[...Array(4)].map((_, i) => (
-                    <div
-                      key={i}
-                      className={`w-3 h-3 rounded-full ${
-                        i < mistakes ? 'bg-gray-300' : 'bg-primary-600'
-                      }`}
-                    />
-                  ))}
+              <div className="bg-white rounded-lg p-4 mb-6 shadow-sm border border-gray-200">
+                <div className="flex items-center justify-center gap-3">
+                  <span className="text-accent-700 font-semibold">Tries Left:</span>
+                  <div className="flex gap-2">
+                    {[...Array(4)].map((_, i) => (
+                      <div
+                        key={i}
+                        className={`w-8 h-8 rounded-lg flex items-center justify-center font-bold ${
+                          i < mistakes 
+                            ? 'bg-gray-200 text-gray-400 line-through' 
+                            : 'bg-primary-100 text-primary-700'
+                        }`}
+                      >
+                        {i < mistakes ? '✗' : '✓'}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
 
@@ -201,15 +214,18 @@ const ConnectionsGame: React.FC = () => {
                 {solvedCategories.map((category, idx) => (
                   <div
                     key={idx}
-                    className={`${category.color} text-white rounded-lg p-4`}
+                    className={`${category.color} text-white rounded-xl p-5 shadow-md border-2 border-white/30`}
                   >
-                    <h3 className="font-bold text-lg mb-2 uppercase tracking-wide">
-                      {category.name}
-                    </h3>
-                    <p className="font-medium mb-2">
-                      {category.words.join(', ')}
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="text-2xl">✓</span>
+                      <h3 className="font-bold text-xl uppercase tracking-wide">
+                        {category.name}
+                      </h3>
+                    </div>
+                    <p className="font-semibold mb-2 text-lg">
+                      {category.words.join(' • ')}
                     </p>
-                    <p className="text-sm opacity-90 italic">
+                    <p className="text-sm opacity-95 border-t border-white/30 pt-2 mt-2">
                       {category.explanation}
                     </p>
                   </div>
@@ -229,10 +245,10 @@ const ConnectionsGame: React.FC = () => {
                       key={idx}
                       onClick={() => handleWordClick(word)}
                       disabled={gameOver}
-                      className={`aspect-square rounded-lg font-semibold text-sm sm:text-base transition-all flex items-center justify-center text-center p-2 ${
+                      className={`aspect-square rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center text-center p-2 shadow-sm border-2 ${
                         selected.includes(word)
-                          ? 'bg-primary-600 text-white scale-95'
-                          : 'bg-gray-200 text-gray-900 hover:bg-gray-300'
+                          ? 'bg-primary-600 text-white border-primary-700 scale-95 shadow-lg'
+                          : 'bg-white text-gray-800 border-gray-300 hover:border-primary-400 hover:shadow-md'
                       } ${gameOver ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
                     >
                       {word}
@@ -245,23 +261,23 @@ const ConnectionsGame: React.FC = () => {
                 <button
                   onClick={handleShuffle}
                   disabled={gameOver}
-                  className="px-6 py-2 bg-gray-200 text-gray-900 rounded-lg font-medium hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="px-6 py-3 bg-white text-gray-700 rounded-xl font-semibold border-2 border-gray-300 hover:border-gray-400 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 >
-                  Shuffle
+                  🔀 Mix Words
                 </button>
                 <button
                   onClick={handleDeselectAll}
                   disabled={gameOver || selected.length === 0}
-                  className="px-6 py-2 bg-gray-200 text-gray-900 rounded-lg font-medium hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="px-6 py-3 bg-white text-gray-700 rounded-xl font-semibold border-2 border-gray-300 hover:border-gray-400 hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed transition-all"
                 >
-                  Deselect All
+                  ↺ Clear Selection
                 </button>
                 <button
                   onClick={handleSubmit}
                   disabled={gameOver || selected.length !== 4}
-                  className="px-6 py-2 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="px-8 py-3 bg-primary-600 text-white rounded-xl font-bold hover:bg-primary-700 disabled:opacity-50 disabled:cursor-not-allowed transition-all shadow-md hover:shadow-lg"
                 >
-                  Submit
+                  Check Answer →
                 </button>
               </div>
 
@@ -269,9 +285,9 @@ const ConnectionsGame: React.FC = () => {
                 <div className="mt-6 text-center">
                   <button
                     onClick={initializeGame}
-                    className="px-8 py-3 bg-primary-600 text-white rounded-lg font-medium hover:bg-primary-700 transition-colors"
+                    className="px-10 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-xl font-bold text-lg hover:shadow-xl transition-all transform hover:scale-105"
                   >
-                    Play Again
+                    🔄 Play Again
                   </button>
                 </div>
               )}
@@ -282,15 +298,18 @@ const ConnectionsGame: React.FC = () => {
                   {categories.map((category, idx) => (
                     <div
                       key={idx}
-                      className={`${category.color} text-white rounded-lg p-4`}
+                      className={`${category.color} text-white rounded-xl p-5 shadow-md border-2 border-white/30`}
                     >
-                      <h3 className="font-bold text-lg mb-2 uppercase tracking-wide">
-                        {category.name}
-                      </h3>
-                      <p className="font-medium mb-2">
-                        {category.words.join(', ')}
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="text-2xl">💡</span>
+                        <h3 className="font-bold text-xl uppercase tracking-wide">
+                          {category.name}
+                        </h3>
+                      </div>
+                      <p className="font-semibold mb-2 text-lg">
+                        {category.words.join(' • ')}
                       </p>
-                      <p className="text-sm opacity-90 italic">
+                      <p className="text-sm opacity-95 border-t border-white/30 pt-2 mt-2">
                         {category.explanation}
                       </p>
                     </div>
