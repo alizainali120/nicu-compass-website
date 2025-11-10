@@ -8,7 +8,6 @@ interface Game {
   title: string
   link: string
   description: string
-  categories: string[]
 }
 
 const games: Game[] = [
@@ -16,15 +15,13 @@ const games: Game[] = [
     id: 1,
     title: 'NICU Care Basics',
     link: '/connections-game',
-    description: 'Learn about breathing support, feeding methods, vital signs, and your care team',
-    categories: ['Breathing Support', 'Feeding Methods', 'Vital Signs', 'NICU Care Team']
+    description: 'Learn about breathing support, feeding methods, vital signs, and your care team'
   },
   {
     id: 2,
     title: 'Baby Care & Bonding',
     link: '/connections-game-2',
-    description: 'Discover warmth devices, milk collection methods, bonding activities, and breast milk benefits',
-    categories: ['Keeping Baby Warm', 'Collecting Milk', 'Bonding Activities', 'Breast Milk Components']
+    description: 'Discover warmth devices, milk collection methods, bonding activities, and breast milk benefits'
   }
 ]
 
@@ -76,20 +73,6 @@ const WordMatchGames: React.FC = () => {
                     <p className="text-accent-600 mb-4">
                       {game.description}
                     </p>
-                  </div>
-                </div>
-
-                <div className="mb-4">
-                  <p className="text-sm font-semibold text-accent-700 mb-2">Categories in this game:</p>
-                  <div className="flex flex-wrap gap-2">
-                    {game.categories.map((category, idx) => (
-                      <span
-                        key={idx}
-                        className="inline-block bg-accent-100 text-accent-700 text-sm px-3 py-1 rounded-full"
-                      >
-                        {category}
-                      </span>
-                    ))}
                   </div>
                 </div>
 
