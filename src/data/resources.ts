@@ -38,7 +38,10 @@ export const resourceCards: ResourceCard[] = [
     details: {
       subtitle: 'Interactive resources for you and baby',
       articles: [
-        
+        {
+          title: 'NICU Connections Game',
+          link: '/connections-game'
+        }
       ]
     }
   },
