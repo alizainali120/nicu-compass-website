@@ -31,12 +31,12 @@ export const resourceCards: ResourceCard[] = [
   },
   {
     id: 'interactive-tools',
-    title: 'Interactive Tools',
-    description: 'Helpful calculators, trackers, and interactive resources to support your NICU journey',
-    icon: '🛠️',
-    category: 'practical',
+    title: 'Stories & Activities',
+    description: 'Gentle games, stories, and bonding activities to share with your baby in the NICU',
+    icon: '📚',
+    category: 'guidance',
     details: {
-      subtitle: 'Tools & Resources',
+      subtitle: 'Interactive resources for you and baby',
       articles: [
         
       ]
