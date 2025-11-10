@@ -318,13 +318,6 @@ const ConnectionsGame: React.FC = () => {
               )}
             </div>
 
-            <div className="card p-6 bg-primary-50 mb-8">
-              <h2 className="text-xl font-bold text-primary-700 mb-3">About This Game</h2>
-              <p className="text-accent-700 leading-relaxed">
-                This Connections game helps NICU families learn and remember important terms in a fun, interactive way. The categories cover essential aspects of NICU care: breathing support, feeding methods, vital signs, and care team members. Playing games like this can be a gentle way to process and understand the NICU experience.
-              </p>
-            </div>
-
             <div className="mt-8">
               <Link to="/" className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium transition-colors">
                 ← Back to Home
