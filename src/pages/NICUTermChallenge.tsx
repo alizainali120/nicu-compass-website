@@ -283,8 +283,8 @@ const NICUTermChallenge: React.FC = () => {
         </div>
 
         <div className="mt-8">
-          <Link to="/word-match-games" className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium transition-colors">
-            ← Back to Word Matching Activities
+          <Link to="/nicu-word-builder" className="inline-flex items-center text-primary-600 hover:text-primary-700 font-medium transition-colors">
+            ← Back to NICU Word Builder
           </Link>
         </div>
       </div>
