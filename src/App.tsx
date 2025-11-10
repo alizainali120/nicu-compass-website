@@ -6,6 +6,7 @@ import { AppState } from './types'
 import { navigationItems } from './data/navigation'
 import NICUBasicsGuide from './pages/NICUBasicsGuide'
 import FeedingInNICU from './pages/FeedingInNICU'
+import MilkComparison from './pages/MilkComparison'
 import ParentStories from './pages/ParentStories'
 import DischargePlanning from './pages/DischargePlanning'
 import ParentWellness from './pages/ParentWellness'
@@ -228,6 +229,7 @@ const App: React.FC = () => {
         />
         <Route path="/nicu-basics-guide" element={<NICUBasicsGuide />} />
         <Route path="/feeding-in-nicu" element={<FeedingInNICU />} />
+        <Route path="/milk-comparison" element={<MilkComparison />} />
         <Route path="/parent-stories" element={<ParentStories />} />
         <Route path="/discharge-planning" element={<DischargePlanning />} />
         <Route path="/parent-wellness" element={<ParentWellness />} />

@@ -17,6 +17,10 @@ export const resourceCards: ResourceCard[] = [
         {
           title: 'Feeding in the NICU: From Tube to Breast or Bottle',
           link: '/feeding-in-nicu'
+        },
+        {
+          title: 'Breast Milk vs. Donor Milk vs. Formula',
+          link: '/milk-comparison'
         }
       ]
     }
