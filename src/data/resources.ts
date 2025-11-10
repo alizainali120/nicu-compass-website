@@ -39,7 +39,7 @@ export const resourceCards: ResourceCard[] = [
       subtitle: 'Interactive resources for you and baby',
       articles: [
         {
-          title: 'NICU Connections Game',
+          title: 'NICU Word Match',
           link: '/connections-game'
         }
       ]
