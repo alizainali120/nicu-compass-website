@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build --mode development",
-    "build:gh": "tsc && vite build --mode production",
-    "preview": "vite preview",
-    "start": "node server.js"
-  },
+  "dev": "vite",
+  "build": "tsc && vite build --mode production",
+  "build:dev": "tsc && vite build --mode development",
+  "preview": "vite preview",
+  "start": "node server.js"
+},
   "dependencies": {
     "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^24.4.0",
