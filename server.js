@@ -13,13 +13,13 @@ const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, 'dist'), {
   setHeaders: (res, filePath) => {
     // Handle JavaScript modules
-    if (filePath.includes('assets/') && filePath.endsWith('.js')) {
+  if (filePath.includes('assets/') && /\.(m?js|ts|tsx)$/.test(filePath)) {
       res.setHeader('Content-Type', 'text/javascript; charset=utf-8');
       return;
     }
     
     // Handle other files using proper MIME type detection
-    const mimeType = mimeTypes.lookup(filePath);
+     const mimeType = mimeTypes.lookup(filePath);
     if (mimeType) {
       res.setHeader('Content-Type', `${mimeType}; charset=utf-8`);
     }
