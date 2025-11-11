@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/nicu-compass-website/', 
+  base: '/', // Changed from '/nicu-compass-website/' for custom domain
   build: {
     outDir: 'dist',
     sourcemap: true,
