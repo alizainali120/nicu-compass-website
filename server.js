@@ -1,9 +1,9 @@
-// server.js
+// server.js (Simplified setHeaders)
 
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import mimeTypes from 'mime-types';
+import mimeTypes from 'mime-types'; // Make sure this is installed: npm install mime-types
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -12,14 +12,16 @@ const __dirname = path.dirname(__filename);
 // Serve static files from the 'dist' directory
 app.use(express.static(path.join(__dirname, 'dist'), {
   setHeaders: (res, filePath) => {
-    // Handle JavaScript modules
-  if (filePath.includes('assets/') && /\.(m?js|ts|tsx)$/.test(filePath)) {
-      res.setHeader('Content-Type', 'text/javascript; charset=utf-8');
-      return;
-    }
+    // Let mime-types handle all files
+    const mimeType = mimeTypes.lookup(filePath);
     
-    // Handle other files using proper MIME type detection
-     const mimeType = mimeTypes.lookup(filePath);
+    // Explicitly set 'text/javascript' for JavaScript files if it's detected as 'application/javascript' or something else
+    // Browsers require 'text/javascript' or 'application/javascript' for modules.
+    if (filePath.endsWith('.js') || filePath.endsWith('.mjs')) {
+        res.setHeader('Content-Type', 'text/javascript; charset=utf-8');
+        return;
+    }
+
     if (mimeType) {
       res.setHeader('Content-Type', `${mimeType}; charset=utf-8`);
     }
