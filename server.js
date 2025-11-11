@@ -1,32 +1,17 @@
-// server.js (Simplified setHeaders)
+// server.js (Simplified express.static)
 
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import mimeTypes from 'mime-types'; // Make sure this is installed: npm install mime-types
+// import mimeTypes from 'mime-types'; // No longer needed for this approach
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Serve static files from the 'dist' directory
-app.use(express.static(path.join(__dirname, 'dist'), {
-  setHeaders: (res, filePath) => {
-    // Let mime-types handle all files
-    const mimeType = mimeTypes.lookup(filePath);
-    
-    // Explicitly set 'text/javascript' for JavaScript files if it's detected as 'application/javascript' or something else
-    // Browsers require 'text/javascript' or 'application/javascript' for modules.
-    if (filePath.endsWith('.js') || filePath.endsWith('.mjs')) {
-        res.setHeader('Content-Type', 'text/javascript; charset=utf-8');
-        return;
-    }
-
-    if (mimeType) {
-      res.setHeader('Content-Type', `${mimeType}; charset=utf-8`);
-    }
-  }
-}));
+// Express should automatically handle MIME types for .js files.
+app.use(express.static(path.join(__dirname, 'dist')));
 
 // This catch-all route handles client-side routing
 app.get(/.*$/, (req, res) => {
