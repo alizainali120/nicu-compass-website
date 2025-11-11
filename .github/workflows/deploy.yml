@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -31,13 +31,26 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
       - name: Build project
         run: npm run build
+        env:
+          NODE_ENV: production
 
-      - name: Show files
-        run: ls -R .
+      - name: Verify build output
+        run: |
+          echo "Contents of dist folder:"
+          ls -la dist/
+          echo "Checking if CNAME exists:"
+          if [ -f dist/CNAME ]; then
+            echo "CNAME found:"
+            cat dist/CNAME
+          else
+            echo "WARNING: CNAME file not found!"
+          fi
+          echo "Checking index.html asset paths:"
+          grep -E "(src=|href=)" dist/index.html || true
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
