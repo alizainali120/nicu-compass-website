@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig(({ mode }) => ({
   plugins: [react()],
   // 1. Keep base path for production deployment
-  base: mode === 'production' ? '/nicu-compass-website/' : '/',
+  base: "/nicu-compass-website/",
   
   // 2. Simplfy server config for development
   server: {
