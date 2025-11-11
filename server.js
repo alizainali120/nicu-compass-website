@@ -13,7 +13,8 @@ const __dirname = path.dirname(__filename);
 // Express should automatically handle MIME types for .js files.
 app.use(express.static(path.join(__dirname, 'dist')));
 
-app.get(/^(?!.*\.\w+$).*/, (req, res) => {
+// This catch-all route handles client-side routing
+app.get(/.*$/, (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
