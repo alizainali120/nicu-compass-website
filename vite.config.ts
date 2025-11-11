@@ -1,25 +1,26 @@
+// vite.config.js (Revised)
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig(({ mode }) => ({
   plugins: [react()],
+  // 1. Keep base path for production deployment
   base: mode === 'production' ? '/nicu-compass-website/' : '/',
+  
+  // 2. Simplfy server config for development
   server: {
-    host: '0.0.0.0',
-    port: 5000,
-    allowedHosts: true,
-    headers: {
-      // Ensure proper MIME types for JavaScript modules
-      'Content-Type': 'application/javascript; charset=utf-8'
-    }
+    host: '0.0.0.0', // Optional, only for dev environment access
+    port: 5173,     // Optional, only for dev environment access
+    // Removed allowedHosts and headers as they are unnecessary/don't affect production
   },
+  
   build: {
     outDir: 'dist',
     sourcemap: true,
     assetsDir: 'assets',
+    // Rollup options are fine, they ensure consistent naming
     rollupOptions: {
       output: {
-        // Ensure proper MIME types for chunks
         chunkFileNames: 'assets/[name]-[hash].js',
         entryFileNames: 'assets/[name]-[hash].js',
       }
