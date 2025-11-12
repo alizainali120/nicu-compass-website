@@ -80,6 +80,28 @@ const NICUStorybookSeries: React.FC = () => {
               </div>
             </div>
           </div>
+
+          <div className="card hover:shadow-xl transition-all duration-300">
+            <div className="p-6">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="text-4xl">✨</div>
+                <div className="flex-1">
+                  <h3 className="text-xl sm:text-2xl font-bold text-accent-900 mb-2">
+                    Dreams Inside the Incubator
+                  </h3>
+                  <p className="text-accent-600 mb-4">
+                    A gentle story about the dreams, warmth, and love that surround your baby
+                  </p>
+                  <Link
+                    to="/dreams-inside-the-incubator"
+                    className="inline-flex items-center gap-2 bg-primary-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-primary-700 transition-colors shadow-md hover:shadow-lg"
+                  >
+                    Read Story →
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="card p-6 bg-white border-2 border-primary-200">
