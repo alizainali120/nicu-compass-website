@@ -32,6 +32,14 @@ const KangarooCuddleTime: React.FC = () => {
         </div>
 
         <div className="card p-8 sm:p-12 mb-8">
+          <div className="mb-8 rounded-2xl overflow-hidden">
+            <img 
+              src="/kangaroo-cuddle-illustration.jpg" 
+              alt="Soft watercolor illustration of parent and baby in gentle embrace"
+              className="w-full h-auto"
+            />
+          </div>
+
           <div className="prose prose-lg max-w-none">
             <div className="text-accent-700 leading-relaxed space-y-6 text-center">
               <p className="italic">
