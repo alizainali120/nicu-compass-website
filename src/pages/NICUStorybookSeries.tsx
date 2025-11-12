@@ -36,11 +36,28 @@ const NICUStorybookSeries: React.FC = () => {
           </p>
         </div>
 
-        <div className="card p-6 bg-accent-50 mb-8">
-          <h3 className="text-lg font-bold text-accent-900 mb-3">📚 Coming Soon</h3>
-          <p className="text-accent-700 leading-relaxed">
-            We're creating a collection of beautiful stories for you and your baby. Check back soon for our first stories!
-          </p>
+        <div className="space-y-6 mb-8">
+          <div className="card hover:shadow-xl transition-all duration-300">
+            <div className="p-6">
+              <div className="flex items-start gap-4 mb-4">
+                <div className="text-4xl">💝</div>
+                <div className="flex-1">
+                  <h3 className="text-xl sm:text-2xl font-bold text-accent-900 mb-2">
+                    Kangaroo Cuddle Time
+                  </h3>
+                  <p className="text-accent-600 mb-4">
+                    A gentle story about skin-to-skin bonding and the special connection between parent and baby during kangaroo care
+                  </p>
+                  <Link
+                    to="/kangaroo-cuddle-time"
+                    className="inline-flex items-center gap-2 bg-primary-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-primary-700 transition-colors shadow-md hover:shadow-lg"
+                  >
+                    Read Story →
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="card p-6 bg-white border-2 border-primary-200">
