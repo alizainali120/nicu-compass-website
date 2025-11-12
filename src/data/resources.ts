@@ -45,6 +45,10 @@ export const resourceCards: ResourceCard[] = [
         {
           title: 'NICU Word Builder',
           link: '/nicu-word-builder'
+        },
+        {
+          title: 'NICU Storybook Series',
+          link: '/nicu-storybook-series'
         }
       ]
     }
