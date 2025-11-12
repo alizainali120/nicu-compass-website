@@ -15,6 +15,7 @@ import NICUWordBuilder from './pages/NICUWordBuilder'
 import NICUTermChallenge from './pages/NICUTermChallenge'
 import NICUStorybookSeries from './pages/NICUStorybookSeries'
 import KangarooCuddleTime from './pages/KangarooCuddleTime'
+import TheLittleFighter from './pages/TheLittleFighter'
 import ParentStories from './pages/ParentStories'
 import DischargePlanning from './pages/DischargePlanning'
 import ParentWellness from './pages/ParentWellness'
@@ -243,6 +244,7 @@ const App: React.FC = () => {
         <Route path="/nicu-word-builder" element={<NICUWordBuilder />} />
         <Route path="/nicu-storybook-series" element={<NICUStorybookSeries />} />
         <Route path="/kangaroo-cuddle-time" element={<KangarooCuddleTime />} />
+        <Route path="/the-little-fighter" element={<TheLittleFighter />} />
         <Route path="/connections-game" element={<ConnectionsGame />} />
         <Route path="/connections-game-2" element={<ConnectionsGame2 />} />
         <Route path="/nicu-term-challenge" element={<NICUTermChallenge />} />
