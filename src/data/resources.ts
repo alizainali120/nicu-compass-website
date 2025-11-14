@@ -101,7 +101,7 @@ export const resourceCards: ResourceCard[] = [
   },
   {
     id: 'parent-wellness',
-    title: 'Caring for Yourself',
+    title: 'Coping in the NICU',
     description: 'Nurturing your own wellbeing while supporting your little one through this journey',
     icon: '💚',
     category: 'wellness',
