@@ -107,6 +107,12 @@ export const resourceCards: ResourceCard[] = [
     category: 'wellness',
     details: {
       subtitle: 'You matter too',
+      articles: [
+        {
+          title: 'Color My Feelings: Therapeutic Mandala',
+          link: '/color-my-feelings'
+        }
+      ],
       content: [
         'Managing stress and processing complex emotions',
         'Finding balance between NICU visits and self-care',

@@ -22,6 +22,7 @@ import DreamsInsideTheIncubator from './pages/DreamsInsideTheIncubator'
 import ParentStories from './pages/ParentStories'
 import DischargePlanning from './pages/DischargePlanning'
 import ParentWellness from './pages/ParentWellness'
+import ColorMyFeelings from './pages/ColorMyFeelings'
 import FinancialResources from './pages/FinancialResources'
 import EmergencySupport from './pages/EmergencySupport'
 
@@ -257,6 +258,7 @@ const App: React.FC = () => {
         <Route path="/parent-stories" element={<ParentStories />} />
         <Route path="/discharge-planning" element={<DischargePlanning />} />
         <Route path="/parent-wellness" element={<ParentWellness />} />
+        <Route path="/color-my-feelings" element={<ColorMyFeelings />} />
         <Route path="/financial-resources" element={<FinancialResources />} />
         <Route path="/emergency-support" element={<EmergencySupport />} />
       </Routes>
