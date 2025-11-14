@@ -1,14 +1,67 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../components/Header'
 import { navigationItems } from '../data/navigation'
 
 const ColorMyFeelings: React.FC = () => {
+  const [selectedColor, setSelectedColor] = useState('#60A5FA')
+  const [sectionColors, setSectionColors] = useState<{ [key: string]: string }>({})
+
+  const colorPalette = [
+    { name: 'Calm Blue', color: '#60A5FA', meaning: 'Calm, peace, hope' },
+    { name: 'Gentle Purple', color: '#A78BFA', meaning: 'Strength, courage' },
+    { name: 'Tender Pink', color: '#F472B6', meaning: 'Love, connection' },
+    { name: 'Healing Green', color: '#34D399', meaning: 'Healing, growth' },
+    { name: 'Bright Yellow', color: '#FCD34D', meaning: 'Joy, optimism' },
+    { name: 'Warm Orange', color: '#FB923C', meaning: 'Energy, comfort' },
+    { name: 'Vibrant Red', color: '#F87171', meaning: 'Passion, vitality' },
+    { name: 'Peaceful Lavender', color: '#C4B5FD', meaning: 'Serenity, grace' },
+    { name: 'Soft Peach', color: '#FDBA74', meaning: 'Warmth, gentleness' },
+    { name: 'Cool Teal', color: '#2DD4BF', meaning: 'Balance, clarity' },
+    { name: 'Quiet Gray', color: '#9CA3AF', meaning: 'Rest, processing' },
+    { name: 'Pure White', color: '#FFFFFF', meaning: 'New beginnings' },
+  ]
+
+  const handleSectionClick = (sectionId: string) => {
+    setSectionColors(prev => ({
+      ...prev,
+      [sectionId]: selectedColor
+    }))
+  }
+
+  const handleReset = () => {
+    setSectionColors({})
+  }
+
+  const downloadCanvas = () => {
+    const svg = document.getElementById('interactive-mandala')
+    if (!svg) return
+
+    const svgData = new XMLSerializer().serializeToString(svg)
+    const canvas = document.createElement('canvas')
+    const ctx = canvas.getContext('2d')
+    const img = new Image()
+
+    canvas.width = 800
+    canvas.height = 800
+
+    img.onload = () => {
+      ctx?.drawImage(img, 0, 0)
+      const pngFile = canvas.toDataURL('image/png')
+      const downloadLink = document.createElement('a')
+      downloadLink.download = 'My-Colored-Mandala.png'
+      downloadLink.href = pngFile
+      downloadLink.click()
+    }
+
+    img.src = 'data:image/svg+xml;base64,' + btoa(svgData)
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-primary-50 to-white">
       <Header navigationItems={navigationItems} />
       
-      <div className="max-w-4xl mx-auto px-4 py-12">
+      <div className="max-w-6xl mx-auto px-4 py-12">
         <nav className="text-sm mb-8 flex items-center space-x-2 text-accent-600">
           <Link to="/" className="hover:text-primary-600 transition-colors">Home</Link>
           <span>›</span>
@@ -25,7 +78,7 @@ const ColorMyFeelings: React.FC = () => {
             Color My Feelings
           </h1>
           <p className="text-lg text-accent-600">
-            A calming mandala to color while you process your emotions
+            A calming interactive mandala to color while you process your emotions
           </p>
         </div>
 
@@ -37,11 +90,11 @@ const ColorMyFeelings: React.FC = () => {
           <div className="space-y-2 text-accent-700">
             <p className="flex items-start gap-2">
               <span className="text-primary-600 font-bold">•</span>
-              <span>Download and print the mandala, or color it on your device</span>
+              <span>Click a color from the palette below to select it</span>
             </p>
             <p className="flex items-start gap-2">
               <span className="text-primary-600 font-bold">•</span>
-              <span>Choose colors based on how you're feeling today</span>
+              <span>Click on any section of the mandala to fill it with your chosen color</span>
             </p>
             <p className="flex items-start gap-2">
               <span className="text-primary-600 font-bold">•</span>
@@ -49,36 +102,203 @@ const ColorMyFeelings: React.FC = () => {
             </p>
             <p className="flex items-start gap-2">
               <span className="text-primary-600 font-bold">•</span>
-              <span>Use this as a quiet moment for yourself during NICU visits</span>
+              <span>Download your finished mandala when you're done</span>
             </p>
           </div>
         </div>
 
-        <div className="card p-8 mb-8">
-          <h2 className="text-xl font-bold text-accent-900 mb-6 text-center">Your Feelings Mandala</h2>
-          
-          <div className="mb-6 bg-white rounded-2xl p-6 border-2 border-primary-200">
-            <img 
-              src="/feelings-mandala.png" 
-              alt="Mandala coloring template with intricate patterns"
-              className="w-full h-auto rounded-lg"
-            />
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+          <div className="lg:col-span-2">
+            <div className="card p-8">
+              <h2 className="text-xl font-bold text-accent-900 mb-6 text-center">Your Interactive Mandala</h2>
+              
+              <div className="mb-6 bg-white rounded-2xl p-6 border-2 border-primary-200">
+                <svg
+                  id="interactive-mandala"
+                  viewBox="0 0 400 400"
+                  className="w-full h-auto"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <rect width="400" height="400" fill="#FAFAFA" />
+                  
+                  {/* Center circle */}
+                  <circle
+                    cx="200"
+                    cy="200"
+                    r="20"
+                    fill={sectionColors['center'] || '#FFFFFF'}
+                    stroke="#333"
+                    strokeWidth="2"
+                    onClick={() => handleSectionClick('center')}
+                    className="cursor-pointer hover:opacity-80 transition-opacity"
+                  />
+
+                  {/* Inner petals - 8 petals */}
+                  {[...Array(8)].map((_, i) => {
+                    const angle = (i * 45) * Math.PI / 180
+                    const x = 200 + Math.cos(angle) * 40
+                    const y = 200 + Math.sin(angle) * 40
+                    return (
+                      <ellipse
+                        key={`inner-petal-${i}`}
+                        cx={x}
+                        cy={y}
+                        rx="15"
+                        ry="25"
+                        fill={sectionColors[`inner-petal-${i}`] || '#FFFFFF'}
+                        stroke="#333"
+                        strokeWidth="2"
+                        transform={`rotate(${i * 45} ${x} ${y})`}
+                        onClick={() => handleSectionClick(`inner-petal-${i}`)}
+                        className="cursor-pointer hover:opacity-80 transition-opacity"
+                      />
+                    )
+                  })}
+
+                  {/* Middle layer circles */}
+                  {[...Array(8)].map((_, i) => {
+                    const angle = (i * 45 + 22.5) * Math.PI / 180
+                    const x = 200 + Math.cos(angle) * 80
+                    const y = 200 + Math.sin(angle) * 80
+                    return (
+                      <circle
+                        key={`middle-circle-${i}`}
+                        cx={x}
+                        cy={y}
+                        r="20"
+                        fill={sectionColors[`middle-circle-${i}`] || '#FFFFFF'}
+                        stroke="#333"
+                        strokeWidth="2"
+                        onClick={() => handleSectionClick(`middle-circle-${i}`)}
+                        className="cursor-pointer hover:opacity-80 transition-opacity"
+                      />
+                    )
+                  })}
+
+                  {/* Outer petals - 8 large petals */}
+                  {[...Array(8)].map((_, i) => {
+                    const angle = (i * 45) * Math.PI / 180
+                    const x = 200 + Math.cos(angle) * 120
+                    const y = 200 + Math.sin(angle) * 120
+                    return (
+                      <ellipse
+                        key={`outer-petal-${i}`}
+                        cx={x}
+                        cy={y}
+                        rx="25"
+                        ry="50"
+                        fill={sectionColors[`outer-petal-${i}`] || '#FFFFFF'}
+                        stroke="#333"
+                        strokeWidth="2"
+                        transform={`rotate(${i * 45} ${x} ${y})`}
+                        onClick={() => handleSectionClick(`outer-petal-${i}`)}
+                        className="cursor-pointer hover:opacity-80 transition-opacity"
+                      />
+                    )
+                  })}
+
+                  {/* Outer small circles */}
+                  {[...Array(16)].map((_, i) => {
+                    const angle = (i * 22.5) * Math.PI / 180
+                    const x = 200 + Math.cos(angle) * 170
+                    const y = 200 + Math.sin(angle) * 170
+                    return (
+                      <circle
+                        key={`outer-small-${i}`}
+                        cx={x}
+                        cy={y}
+                        r="12"
+                        fill={sectionColors[`outer-small-${i}`] || '#FFFFFF'}
+                        stroke="#333"
+                        strokeWidth="2"
+                        onClick={() => handleSectionClick(`outer-small-${i}`)}
+                        className="cursor-pointer hover:opacity-80 transition-opacity"
+                      />
+                    )
+                  })}
+
+                  {/* Decorative ring sections */}
+                  {[...Array(8)].map((_, i) => {
+                    const startAngle = i * 45 + 10
+                    const endAngle = i * 45 + 35
+                    return (
+                      <path
+                        key={`ring-${i}`}
+                        d={`M 200 200 L ${200 + Math.cos(startAngle * Math.PI / 180) * 65} ${200 + Math.sin(startAngle * Math.PI / 180) * 65} A 65 65 0 0 1 ${200 + Math.cos(endAngle * Math.PI / 180) * 65} ${200 + Math.sin(endAngle * Math.PI / 180) * 65} Z`}
+                        fill={sectionColors[`ring-${i}`] || '#FFFFFF'}
+                        stroke="#333"
+                        strokeWidth="2"
+                        onClick={() => handleSectionClick(`ring-${i}`)}
+                        className="cursor-pointer hover:opacity-80 transition-opacity"
+                      />
+                    )
+                  })}
+                </svg>
+              </div>
+
+              <div className="flex justify-center gap-4">
+                <button
+                  onClick={handleReset}
+                  className="bg-gray-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-600 transition-colors shadow-md hover:shadow-lg"
+                >
+                  🔄 Reset Colors
+                </button>
+                <button
+                  onClick={downloadCanvas}
+                  className="bg-primary-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-primary-700 transition-colors shadow-md hover:shadow-lg"
+                >
+                  📥 Download Your Mandala
+                </button>
+              </div>
+            </div>
           </div>
 
-          <div className="text-center">
-            <a
-              href="/feelings-mandala.png"
-              download="NICU-Compass-Feelings-Mandala.png"
-              className="inline-flex items-center gap-2 bg-primary-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-primary-700 transition-colors shadow-md hover:shadow-lg"
-            >
-              📥 Download Mandala to Print
-            </a>
+          <div className="lg:col-span-1">
+            <div className="card p-6 bg-white border-2 border-primary-200 sticky top-4">
+              <h3 className="text-lg font-bold text-accent-900 mb-4">🎨 Color Palette</h3>
+              <p className="text-sm text-accent-600 mb-4">Click a color to select it, then click sections of the mandala to fill</p>
+              
+              <div className="grid grid-cols-2 gap-3 mb-6">
+                {colorPalette.map((item) => (
+                  <button
+                    key={item.color}
+                    onClick={() => setSelectedColor(item.color)}
+                    className={`p-3 rounded-lg border-2 transition-all ${
+                      selectedColor === item.color
+                        ? 'border-accent-900 shadow-lg scale-105'
+                        : 'border-gray-300 hover:border-accent-500'
+                    }`}
+                  >
+                    <div
+                      className="w-full h-12 rounded-md mb-2"
+                      style={{ backgroundColor: item.color }}
+                    />
+                    <div className="text-xs font-semibold text-accent-900">{item.name}</div>
+                    <div className="text-xs text-accent-600">{item.meaning}</div>
+                  </button>
+                ))}
+              </div>
+
+              <div className="p-3 bg-primary-50 rounded-lg border border-primary-200">
+                <p className="text-sm font-semibold text-primary-700 mb-1">Selected Color:</p>
+                <div className="flex items-center gap-2">
+                  <div
+                    className="w-8 h-8 rounded border-2 border-accent-900"
+                    style={{ backgroundColor: selectedColor }}
+                  />
+                  <span className="text-sm text-accent-700">
+                    {colorPalette.find(c => c.color === selectedColor)?.name || 'Custom'}
+                  </span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <div className="card p-6 bg-white border-2 border-primary-200">
-            <h3 className="text-lg font-bold text-accent-900 mb-3">💙 Suggested Color Meanings</h3>
+            <h3 className="text-lg font-bold text-accent-900 mb-3">💙 Color Meanings</h3>
+            <p className="text-sm text-accent-600 mb-3">Choose colors based on your feelings today:</p>
             <div className="space-y-2 text-sm text-accent-700">
               <p><span className="font-semibold text-blue-600">Blue:</span> Calm, peace, hope</p>
               <p><span className="font-semibold text-purple-600">Purple:</span> Strength, courage, resilience</p>
@@ -87,7 +307,6 @@ const ColorMyFeelings: React.FC = () => {
               <p><span className="font-semibold text-yellow-600">Yellow:</span> Joy, optimism, light</p>
               <p><span className="font-semibold text-orange-600">Orange:</span> Energy, warmth, comfort</p>
               <p><span className="font-semibold text-red-600">Red:</span> Passion, life, vitality</p>
-              <p><span className="font-semibold text-gray-600">Gray:</span> Rest, quiet, processing</p>
             </div>
           </div>
 
