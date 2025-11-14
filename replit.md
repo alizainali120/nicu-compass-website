@@ -50,19 +50,37 @@ NICU Compass is a modern React TypeScript website providing support, information
 - **Interactions**: Expandable cards with smooth animations
 
 ## Recent Changes
+- 2025-11-14: Added "Match the NICU Term" interactive quiz game
+  - Created matching game where parents click to match 8 NICU terms with their meanings
+  - Shuffled meanings on the right side for educational challenge
+  - Visual feedback with color changes: blue when selected, green when correctly matched
+  - Success celebration screen when all 8 terms are matched correctly
+  - Attempt counter to track learning progress
+  - Reset functionality to play again
+  - Added to Stories & Activities section in homepage resources
+
+- 2025-11-14: Created "Decode the NICU" medical terminology guide
+  - Comprehensive glossary of 16 common NICU terms and abbreviations
+  - Three-column format: Term → Medical Meaning → What It Means for Your Baby
+  - Terms include A/B/D, CPAP, ETT, HFV, SIMV, HFNC, IVH, PDA, ROP, NPO, TPN, PICC, UAC/UVC, ABG, PEEP, and Kangaroo Care
+  - Blue badge highlighting for each term
+  - Helpful tips section for asking questions and understanding care
+  - Added as second article in NICU Essentials section
+
+- 2025-11-14: Completed NICU Storybook Series with three stories featuring custom AI-generated watercolor illustrations
+  - "Kangaroo Cuddle Time" - Story about skin-to-skin bonding with soft watercolor illustration of parent and baby
+  - "The Little Fighter" - Story of strength and courage with gentle NICU scene illustration
+  - "Dreams Inside the Incubator" - Story about dreams and love with warm golden-lit incubator illustration
+  - All illustrations created with custom AI art in soft watercolor style, pastel colors
+  - Each story includes educational context for parents
+  - Stories designed for bedside reading to NICU babies
+  - Added to Stories & Activities section
+
 - 2025-10-06: Improved site navigation with clickable logo and working menu links
   - Made "NICU Compass" logo clickable to return to home page from any article
   - Added hover effect to logo (text changes to primary color on hover)
   - Fixed navigation menu links to work from article pages (now properly navigate to home page sections)
   - Enhanced user experience with multiple ways to navigate back to home
-
-- 2025-10-06: Enhanced article layout with breadcrumb navigation and refined header hierarchy
-  - Implemented breadcrumb navigation (Home › Resources › NICU Essentials) for better context
-  - Added compact category badge above article title for subtle categorization
-  - Promoted article title to main H1, improving visual hierarchy and SEO
-  - Updated all section headings with trailing colons to match content standards
-  - Refined "Quick Tip" section title and description formatting
-  - Maintained modern frosted card styling with all primary color palette
   
 - 2025-10-06: Enhanced styling for NICU Basics Guide and resources grid
   - Updated NICU Basics Guide with modern frosted card styling and backdrop blur effects

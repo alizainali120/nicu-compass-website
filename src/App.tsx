@@ -13,6 +13,7 @@ import ConnectionsGame from './pages/ConnectionsGame'
 import ConnectionsGame2 from './pages/ConnectionsGame2'
 import NICUWordMatch from './pages/NICUWordMatch'
 import NICUWordBuilder from './pages/NICUWordBuilder'
+import MatchTheNICUTerm from './pages/MatchTheNICUTerm'
 import NICUTermChallenge from './pages/NICUTermChallenge'
 import NICUStorybookSeries from './pages/NICUStorybookSeries'
 import KangarooCuddleTime from './pages/KangarooCuddleTime'
@@ -245,6 +246,7 @@ const App: React.FC = () => {
         <Route path="/donor-milk-faq" element={<DonorMilkFAQ />} />
         <Route path="/nicu-word-match" element={<NICUWordMatch />} />
         <Route path="/nicu-word-builder" element={<NICUWordBuilder />} />
+        <Route path="/match-the-nicu-term" element={<MatchTheNICUTerm />} />
         <Route path="/nicu-storybook-series" element={<NICUStorybookSeries />} />
         <Route path="/kangaroo-cuddle-time" element={<KangarooCuddleTime />} />
         <Route path="/the-little-fighter" element={<TheLittleFighter />} />
