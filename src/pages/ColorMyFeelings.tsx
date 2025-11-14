@@ -18,6 +18,10 @@ const ColorMyFeelings: React.FC = () => {
     { name: 'Peaceful Lavender', color: '#C4B5FD', meaning: 'Serenity, grace' },
     { name: 'Soft Peach', color: '#FDBA74', meaning: 'Warmth, gentleness' },
     { name: 'Cool Teal', color: '#2DD4BF', meaning: 'Balance, clarity' },
+    { name: 'Anxious Indigo', color: '#6366F1', meaning: 'Anxious, tense, worried' },
+    { name: 'Scared Navy', color: '#1E3A8A', meaning: 'Scared, fearful' },
+    { name: 'Uncertain Fog', color: '#D1D5DB', meaning: 'Uncertainty, confusion' },
+    { name: 'Overwhelmed Brown', color: '#92400E', meaning: 'Overwhelmed, heavy' },
     { name: 'Quiet Gray', color: '#9CA3AF', meaning: 'Rest, processing' },
     { name: 'Pure White', color: '#FFFFFF', meaning: 'New beginnings' },
   ]
@@ -297,16 +301,21 @@ const ColorMyFeelings: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <div className="card p-6 bg-white border-2 border-primary-200">
-            <h3 className="text-lg font-bold text-accent-900 mb-3">💙 Color Meanings</h3>
-            <p className="text-sm text-accent-600 mb-3">Choose colors based on your feelings today:</p>
-            <div className="space-y-2 text-sm text-accent-700">
-              <p><span className="font-semibold text-blue-600">Blue:</span> Calm, peace, hope</p>
-              <p><span className="font-semibold text-purple-600">Purple:</span> Strength, courage, resilience</p>
-              <p><span className="font-semibold text-pink-600">Pink:</span> Love, tenderness, connection</p>
-              <p><span className="font-semibold text-green-600">Green:</span> Healing, growth, balance</p>
-              <p><span className="font-semibold text-yellow-600">Yellow:</span> Joy, optimism, light</p>
-              <p><span className="font-semibold text-orange-600">Orange:</span> Energy, warmth, comfort</p>
-              <p><span className="font-semibold text-red-600">Red:</span> Passion, life, vitality</p>
+            <h3 className="text-lg font-bold text-accent-900 mb-3">💙 All Your Feelings Are Valid</h3>
+            <p className="text-sm text-accent-600 mb-3">Choose colors based on your feelings today - positive and difficult emotions alike:</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-accent-700">
+              <p><span className="font-semibold text-blue-600">Light Blue:</span> Calm, peace, hope</p>
+              <p><span className="font-semibold text-purple-600">Purple:</span> Strength, courage</p>
+              <p><span className="font-semibold text-pink-600">Pink:</span> Love, connection</p>
+              <p><span className="font-semibold text-green-600">Green:</span> Healing, growth</p>
+              <p><span className="font-semibold text-yellow-600">Yellow:</span> Joy, optimism</p>
+              <p><span className="font-semibold text-orange-600">Orange:</span> Energy, comfort</p>
+              <p><span className="font-semibold text-red-600">Red:</span> Passion, vitality</p>
+              <p><span className="font-semibold text-teal-600">Teal:</span> Balance, clarity</p>
+              <p><span className="font-semibold text-indigo-600">Indigo:</span> Anxious, worried</p>
+              <p><span className="font-semibold" style={{color: '#1E3A8A'}}>Navy:</span> Scared, fearful</p>
+              <p><span className="font-semibold text-gray-400">Light Gray:</span> Uncertain, confused</p>
+              <p><span className="font-semibold" style={{color: '#92400E'}}>Brown:</span> Overwhelmed, heavy</p>
             </div>
           </div>
 
