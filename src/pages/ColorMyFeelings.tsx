@@ -125,154 +125,201 @@ const ColorMyFeelings: React.FC = () => {
                 >
                   <rect width="500" height="500" fill="#FAFAFA" />
                   
-                  {/* CENTER OCTAGON */}
-                  <polygon
-                    points={[...Array(8)].map((_, i) => {
-                      const angle = (i * 45) * Math.PI / 180
-                      const x = 250 + Math.cos(angle) * 25
-                      const y = 250 + Math.sin(angle) * 25
-                      return `${x},${y}`
-                    }).join(' ')}
+                  {/* CENTER CIRCLE */}
+                  <circle
+                    cx="250"
+                    cy="250"
+                    r="18"
                     fill={sectionColors['center'] || '#FFFFFF'}
                     stroke="#333"
-                    strokeWidth="2"
+                    strokeWidth="1.5"
                     onClick={() => handleSectionClick('center')}
                     className="cursor-pointer hover:opacity-80 transition-opacity"
                   />
-
-                  {/* FIRST RING - 8 Diamonds */}
-                  {[...Array(8)].map((_, i) => {
-                    const angle = (i * 45) * Math.PI / 180
-                    const x = 250 + Math.cos(angle) * 55
-                    const y = 250 + Math.sin(angle) * 55
-                    const size = 18
+                  
+                  {/* Center decorative dots */}
+                  {[...Array(6)].map((_, i) => {
+                    const angle = (i * 60) * Math.PI / 180
+                    const x = 250 + Math.cos(angle) * 10
+                    const y = 250 + Math.sin(angle) * 10
                     return (
-                      <rect
-                        key={`diamond1-${i}`}
-                        x={x - size}
-                        y={y - size}
-                        width={size * 2}
-                        height={size * 2}
-                        fill={sectionColors[`diamond1-${i}`] || '#FFFFFF'}
-                        stroke="#333"
-                        strokeWidth="2"
-                        transform={`rotate(45 ${x} ${y})`}
-                        onClick={() => handleSectionClick(`diamond1-${i}`)}
-                        className="cursor-pointer hover:opacity-80 transition-opacity"
+                      <circle
+                        key={`center-dot-${i}`}
+                        cx={x}
+                        cy={y}
+                        r="1.5"
+                        fill="#333"
+                        pointerEvents="none"
                       />
                     )
                   })}
 
-                  {/* SECOND RING - 12 Triangles */}
-                  {[...Array(12)].map((_, i) => {
-                    const angle = (i * 30) * Math.PI / 180
-                    const x = 250 + Math.cos(angle) * 90
-                    const y = 250 + Math.sin(angle) * 90
-                    const size = 16
-                    const points = `${x},${y - size} ${x - size},${y + size} ${x + size},${y + size}`
-                    return (
-                      <polygon
-                        key={`triangle1-${i}`}
-                        points={points}
-                        fill={sectionColors[`triangle1-${i}`] || '#FFFFFF'}
-                        stroke="#333"
-                        strokeWidth="2"
-                        onClick={() => handleSectionClick(`triangle1-${i}`)}
-                        className="cursor-pointer hover:opacity-80 transition-opacity"
-                      />
-                    )
-                  })}
-
-                  {/* THIRD RING - 8 Hexagons */}
-                  {[...Array(8)].map((_, i) => {
-                    const angle = (i * 45) * Math.PI / 180
-                    const x = 250 + Math.cos(angle) * 125
-                    const y = 250 + Math.sin(angle) * 125
-                    const size = 18
-                    const points = [...Array(6)].map((_, j) => {
-                      const a = (j * 60) * Math.PI / 180
-                      return `${x + Math.cos(a) * size},${y + Math.sin(a) * size}`
-                    }).join(' ')
-                    return (
-                      <polygon
-                        key={`hexagon1-${i}`}
-                        points={points}
-                        fill={sectionColors[`hexagon1-${i}`] || '#FFFFFF'}
-                        stroke="#333"
-                        strokeWidth="2"
-                        onClick={() => handleSectionClick(`hexagon1-${i}`)}
-                        className="cursor-pointer hover:opacity-80 transition-opacity"
-                      />
-                    )
-                  })}
-
-                  {/* FOURTH RING - 16 Squares */}
+                  {/* FIRST LAYER - Small pointed petals (16 petals) */}
                   {[...Array(16)].map((_, i) => {
                     const angle = (i * 22.5) * Math.PI / 180
-                    const x = 250 + Math.cos(angle) * 160
-                    const y = 250 + Math.sin(angle) * 160
-                    const size = 14
+                    const baseX = 250 + Math.cos(angle) * 22
+                    const baseY = 250 + Math.sin(angle) * 22
+                    const tipX = 250 + Math.cos(angle) * 42
+                    const tipY = 250 + Math.sin(angle) * 42
+                    const leftX = 250 + Math.cos(angle - 0.15) * 32
+                    const leftY = 250 + Math.sin(angle - 0.15) * 32
+                    const rightX = 250 + Math.cos(angle + 0.15) * 32
+                    const rightY = 250 + Math.sin(angle + 0.15) * 32
                     return (
-                      <rect
-                        key={`square1-${i}`}
-                        x={x - size}
-                        y={y - size}
-                        width={size * 2}
-                        height={size * 2}
-                        fill={sectionColors[`square1-${i}`] || '#FFFFFF'}
+                      <path
+                        key={`inner-petal-${i}`}
+                        d={`M ${baseX} ${baseY} Q ${leftX} ${leftY}, ${tipX} ${tipY} Q ${rightX} ${rightY}, ${baseX} ${baseY} Z`}
+                        fill={sectionColors[`inner-petal-${i}`] || '#FFFFFF'}
                         stroke="#333"
-                        strokeWidth="2"
-                        onClick={() => handleSectionClick(`square1-${i}`)}
+                        strokeWidth="1.2"
+                        onClick={() => handleSectionClick(`inner-petal-${i}`)}
                         className="cursor-pointer hover:opacity-80 transition-opacity"
                       />
                     )
                   })}
 
-                  {/* FIFTH RING - 12 Pointed Stars */}
+                  {/* SECOND LAYER - Ornate curved petals (8 petals) */}
+                  {[...Array(8)].map((_, i) => {
+                    const angle = (i * 45) * Math.PI / 180
+                    const baseX = 250 + Math.cos(angle) * 45
+                    const baseY = 250 + Math.sin(angle) * 45
+                    const tipX = 250 + Math.cos(angle) * 75
+                    const tipY = 250 + Math.sin(angle) * 75
+                    const ctrl1X = 250 + Math.cos(angle - 0.35) * 62
+                    const ctrl1Y = 250 + Math.sin(angle - 0.35) * 62
+                    const ctrl2X = 250 + Math.cos(angle + 0.35) * 62
+                    const ctrl2Y = 250 + Math.sin(angle + 0.35) * 62
+                    return (
+                      <g key={`layer2-${i}`}>
+                        <path
+                          d={`M ${baseX} ${baseY} Q ${ctrl1X} ${ctrl1Y}, ${tipX} ${tipY} Q ${ctrl2X} ${ctrl2Y}, ${baseX} ${baseY} Z`}
+                          fill={sectionColors[`layer2-${i}`] || '#FFFFFF'}
+                          stroke="#333"
+                          strokeWidth="1.2"
+                          onClick={() => handleSectionClick(`layer2-${i}`)}
+                          className="cursor-pointer hover:opacity-80 transition-opacity"
+                        />
+                        <circle cx={250 + Math.cos(angle) * 60} cy={250 + Math.sin(angle) * 60} r="2" fill="#333" pointerEvents="none" />
+                      </g>
+                    )
+                  })}
+
+                  {/* THIRD LAYER - Lotus petals with detail (16 petals) */}
+                  {[...Array(16)].map((_, i) => {
+                    const angle = (i * 22.5) * Math.PI / 180
+                    const baseX = 250 + Math.cos(angle) * 78
+                    const baseY = 250 + Math.sin(angle) * 78
+                    const tipX = 250 + Math.cos(angle) * 115
+                    const tipY = 250 + Math.sin(angle) * 115
+                    const leftX = 250 + Math.cos(angle - 0.22) * 98
+                    const leftY = 250 + Math.sin(angle - 0.22) * 98
+                    const rightX = 250 + Math.cos(angle + 0.22) * 98
+                    const rightY = 250 + Math.sin(angle + 0.22) * 98
+                    return (
+                      <g key={`layer3-${i}`}>
+                        <path
+                          d={`M ${baseX} ${baseY} Q ${leftX} ${leftY}, ${tipX} ${tipY} Q ${rightX} ${rightY}, ${baseX} ${baseY} Z`}
+                          fill={sectionColors[`layer3-${i}`] || '#FFFFFF'}
+                          stroke="#333"
+                          strokeWidth="1.2"
+                          onClick={() => handleSectionClick(`layer3-${i}`)}
+                          className="cursor-pointer hover:opacity-80 transition-opacity"
+                        />
+                        <line x1={baseX} y1={baseY} x2={tipX} y2={tipY} stroke="#333" strokeWidth="0.6" pointerEvents="none" />
+                        <circle cx={250 + Math.cos(angle) * 97} cy={250 + Math.sin(angle) * 97} r="1.5" fill="#333" pointerEvents="none" />
+                      </g>
+                    )
+                  })}
+
+                  {/* FOURTH LAYER - Large ornate petals (12 petals) */}
                   {[...Array(12)].map((_, i) => {
                     const angle = (i * 30) * Math.PI / 180
-                    const x = 250 + Math.cos(angle) * 195
-                    const y = 250 + Math.sin(angle) * 195
-                    const outerRadius = 16
-                    const innerRadius = 8
-                    const points = [...Array(8)].map((_, j) => {
-                      const a = (j * 45) * Math.PI / 180
-                      const r = j % 2 === 0 ? outerRadius : innerRadius
-                      return `${x + Math.cos(a) * r},${y + Math.sin(a) * r}`
-                    }).join(' ')
+                    const baseX = 250 + Math.cos(angle) * 118
+                    const baseY = 250 + Math.sin(angle) * 118
+                    const tipX = 250 + Math.cos(angle) * 160
+                    const tipY = 250 + Math.sin(angle) * 160
+                    const leftCtrlX = 250 + Math.cos(angle - 0.4) * 145
+                    const leftCtrlY = 250 + Math.sin(angle - 0.4) * 145
+                    const rightCtrlX = 250 + Math.cos(angle + 0.4) * 145
+                    const rightCtrlY = 250 + Math.sin(angle + 0.4) * 145
                     return (
-                      <polygon
-                        key={`star1-${i}`}
-                        points={points}
-                        fill={sectionColors[`star1-${i}`] || '#FFFFFF'}
-                        stroke="#333"
-                        strokeWidth="2"
-                        onClick={() => handleSectionClick(`star1-${i}`)}
-                        className="cursor-pointer hover:opacity-80 transition-opacity"
-                      />
+                      <g key={`layer4-${i}`}>
+                        <path
+                          d={`M ${baseX} ${baseY} Q ${leftCtrlX} ${leftCtrlY}, ${tipX} ${tipY} Q ${rightCtrlX} ${rightCtrlY}, ${baseX} ${baseY} Z`}
+                          fill={sectionColors[`layer4-${i}`] || '#FFFFFF'}
+                          stroke="#333"
+                          strokeWidth="1.2"
+                          onClick={() => handleSectionClick(`layer4-${i}`)}
+                          className="cursor-pointer hover:opacity-80 transition-opacity"
+                        />
+                        <path
+                          d={`M ${baseX} ${baseY} Q ${250 + Math.cos(angle) * 135} ${250 + Math.sin(angle) * 135}, ${tipX} ${tipY}`}
+                          fill="none"
+                          stroke="#333"
+                          strokeWidth="0.7"
+                          pointerEvents="none"
+                        />
+                        <circle cx={250 + Math.cos(angle) * 140} cy={250 + Math.sin(angle) * 140} r="2.5" fill="#333" pointerEvents="none" />
+                      </g>
                     )
                   })}
 
-                  {/* OUTER RING - 24 Small Diamonds */}
+                  {/* FIFTH LAYER - Elongated flowing petals (16 petals) */}
+                  {[...Array(16)].map((_, i) => {
+                    const angle = (i * 22.5) * Math.PI / 180
+                    const baseX = 250 + Math.cos(angle) * 163
+                    const baseY = 250 + Math.sin(angle) * 163
+                    const tipX = 250 + Math.cos(angle) * 205
+                    const tipY = 250 + Math.sin(angle) * 205
+                    const leftX = 250 + Math.cos(angle - 0.18) * 188
+                    const leftY = 250 + Math.sin(angle - 0.18) * 188
+                    const rightX = 250 + Math.cos(angle + 0.18) * 188
+                    const rightY = 250 + Math.sin(angle + 0.18) * 188
+                    return (
+                      <g key={`layer5-${i}`}>
+                        <path
+                          d={`M ${baseX} ${baseY} Q ${leftX} ${leftY}, ${tipX} ${tipY} Q ${rightX} ${rightY}, ${baseX} ${baseY} Z`}
+                          fill={sectionColors[`layer5-${i}`] || '#FFFFFF'}
+                          stroke="#333"
+                          strokeWidth="1.2"
+                          onClick={() => handleSectionClick(`layer5-${i}`)}
+                          className="cursor-pointer hover:opacity-80 transition-opacity"
+                        />
+                        <line x1={baseX} y1={baseY} x2={tipX} y2={tipY} stroke="#333" strokeWidth="0.6" pointerEvents="none" />
+                        <path
+                          d={`M ${250 + Math.cos(angle) * 178} ${250 + Math.sin(angle) * 178} Q ${250 + Math.cos(angle - 0.12) * 188} ${250 + Math.sin(angle - 0.12) * 188}, ${250 + Math.cos(angle) * 198} ${250 + Math.sin(angle) * 198}`}
+                          fill="none"
+                          stroke="#333"
+                          strokeWidth="0.5"
+                          pointerEvents="none"
+                        />
+                      </g>
+                    )
+                  })}
+
+                  {/* OUTER LAYER - Decorative scalloped border (24 sections) */}
                   {[...Array(24)].map((_, i) => {
                     const angle = (i * 15) * Math.PI / 180
-                    const x = 250 + Math.cos(angle) * 225
-                    const y = 250 + Math.sin(angle) * 225
-                    const size = 8
+                    const nextAngle = ((i + 1) * 15) * Math.PI / 180
+                    const x1 = 250 + Math.cos(angle) * 215
+                    const y1 = 250 + Math.sin(angle) * 215
+                    const x2 = 250 + Math.cos(nextAngle) * 215
+                    const y2 = 250 + Math.sin(nextAngle) * 215
+                    const midAngle = (angle + nextAngle) / 2
+                    const midX = 250 + Math.cos(midAngle) * 232
+                    const midY = 250 + Math.sin(midAngle) * 232
                     return (
-                      <rect
-                        key={`diamond2-${i}`}
-                        x={x - size}
-                        y={y - size}
-                        width={size * 2}
-                        height={size * 2}
-                        fill={sectionColors[`diamond2-${i}`] || '#FFFFFF'}
-                        stroke="#333"
-                        strokeWidth="1.5"
-                        transform={`rotate(45 ${x} ${y})`}
-                        onClick={() => handleSectionClick(`diamond2-${i}`)}
-                        className="cursor-pointer hover:opacity-80 transition-opacity"
-                      />
+                      <g key={`outer-${i}`}>
+                        <path
+                          d={`M ${x1} ${y1} Q ${midX} ${midY}, ${x2} ${y2} L ${250 + Math.cos(nextAngle) * 208} ${250 + Math.sin(nextAngle) * 208} Q ${250 + Math.cos(midAngle) * 208} ${250 + Math.sin(midAngle) * 208}, ${250 + Math.cos(angle) * 208} ${250 + Math.sin(angle) * 208} Z`}
+                          fill={sectionColors[`outer-${i}`] || '#FFFFFF'}
+                          stroke="#333"
+                          strokeWidth="1.2"
+                          onClick={() => handleSectionClick(`outer-${i}`)}
+                          className="cursor-pointer hover:opacity-80 transition-opacity"
+                        />
+                        <circle cx={midX} cy={midY} r="2.5" fill="#333" pointerEvents="none" />
+                      </g>
                     )
                   })}
                 </svg>
