@@ -125,11 +125,14 @@ const ColorMyFeelings: React.FC = () => {
                 >
                   <rect width="500" height="500" fill="#FAFAFA" />
                   
-                  {/* Center circle */}
-                  <circle
-                    cx="250"
-                    cy="250"
-                    r="20"
+                  {/* CENTER OCTAGON */}
+                  <polygon
+                    points={[...Array(8)].map((_, i) => {
+                      const angle = (i * 45) * Math.PI / 180
+                      const x = 250 + Math.cos(angle) * 25
+                      const y = 250 + Math.sin(angle) * 25
+                      return `${x},${y}`
+                    }).join(' ')}
                     fill={sectionColors['center'] || '#FFFFFF'}
                     stroke="#333"
                     strokeWidth="2"
@@ -137,85 +140,137 @@ const ColorMyFeelings: React.FC = () => {
                     className="cursor-pointer hover:opacity-80 transition-opacity"
                   />
 
-                  {/* Inner petals - 8 petals */}
+                  {/* FIRST RING - 8 Diamonds */}
                   {[...Array(8)].map((_, i) => {
                     const angle = (i * 45) * Math.PI / 180
-                    const x = 250 + Math.cos(angle) * 50
-                    const y = 250 + Math.sin(angle) * 50
+                    const x = 250 + Math.cos(angle) * 55
+                    const y = 250 + Math.sin(angle) * 55
+                    const size = 18
                     return (
-                      <ellipse
-                        key={`inner-petal-${i}`}
-                        cx={x}
-                        cy={y}
-                        rx="18"
-                        ry="30"
-                        fill={sectionColors[`inner-petal-${i}`] || '#FFFFFF'}
+                      <rect
+                        key={`diamond1-${i}`}
+                        x={x - size}
+                        y={y - size}
+                        width={size * 2}
+                        height={size * 2}
+                        fill={sectionColors[`diamond1-${i}`] || '#FFFFFF'}
                         stroke="#333"
                         strokeWidth="2"
-                        transform={`rotate(${i * 45} ${x} ${y})`}
-                        onClick={() => handleSectionClick(`inner-petal-${i}`)}
+                        transform={`rotate(45 ${x} ${y})`}
+                        onClick={() => handleSectionClick(`diamond1-${i}`)}
                         className="cursor-pointer hover:opacity-80 transition-opacity"
                       />
                     )
                   })}
 
-                  {/* Middle layer circles */}
-                  {[...Array(8)].map((_, i) => {
-                    const angle = (i * 45 + 22.5) * Math.PI / 180
-                    const x = 250 + Math.cos(angle) * 95
-                    const y = 250 + Math.sin(angle) * 95
+                  {/* SECOND RING - 12 Triangles */}
+                  {[...Array(12)].map((_, i) => {
+                    const angle = (i * 30) * Math.PI / 180
+                    const x = 250 + Math.cos(angle) * 90
+                    const y = 250 + Math.sin(angle) * 90
+                    const size = 16
+                    const points = `${x},${y - size} ${x - size},${y + size} ${x + size},${y + size}`
                     return (
-                      <circle
-                        key={`middle-circle-${i}`}
-                        cx={x}
-                        cy={y}
-                        r="22"
-                        fill={sectionColors[`middle-circle-${i}`] || '#FFFFFF'}
+                      <polygon
+                        key={`triangle1-${i}`}
+                        points={points}
+                        fill={sectionColors[`triangle1-${i}`] || '#FFFFFF'}
                         stroke="#333"
                         strokeWidth="2"
-                        onClick={() => handleSectionClick(`middle-circle-${i}`)}
+                        onClick={() => handleSectionClick(`triangle1-${i}`)}
                         className="cursor-pointer hover:opacity-80 transition-opacity"
                       />
                     )
                   })}
 
-                  {/* Outer petals - 8 large petals */}
+                  {/* THIRD RING - 8 Hexagons */}
                   {[...Array(8)].map((_, i) => {
                     const angle = (i * 45) * Math.PI / 180
-                    const x = 250 + Math.cos(angle) * 150
-                    const y = 250 + Math.sin(angle) * 150
+                    const x = 250 + Math.cos(angle) * 125
+                    const y = 250 + Math.sin(angle) * 125
+                    const size = 18
+                    const points = [...Array(6)].map((_, j) => {
+                      const a = (j * 60) * Math.PI / 180
+                      return `${x + Math.cos(a) * size},${y + Math.sin(a) * size}`
+                    }).join(' ')
                     return (
-                      <ellipse
-                        key={`outer-petal-${i}`}
-                        cx={x}
-                        cy={y}
-                        rx="28"
-                        ry="55"
-                        fill={sectionColors[`outer-petal-${i}`] || '#FFFFFF'}
+                      <polygon
+                        key={`hexagon1-${i}`}
+                        points={points}
+                        fill={sectionColors[`hexagon1-${i}`] || '#FFFFFF'}
                         stroke="#333"
                         strokeWidth="2"
-                        transform={`rotate(${i * 45} ${x} ${y})`}
-                        onClick={() => handleSectionClick(`outer-petal-${i}`)}
+                        onClick={() => handleSectionClick(`hexagon1-${i}`)}
                         className="cursor-pointer hover:opacity-80 transition-opacity"
                       />
                     )
                   })}
 
-                  {/* Outer small circles */}
+                  {/* FOURTH RING - 16 Squares */}
                   {[...Array(16)].map((_, i) => {
                     const angle = (i * 22.5) * Math.PI / 180
-                    const x = 250 + Math.cos(angle) * 205
-                    const y = 250 + Math.sin(angle) * 205
+                    const x = 250 + Math.cos(angle) * 160
+                    const y = 250 + Math.sin(angle) * 160
+                    const size = 14
                     return (
-                      <circle
-                        key={`outer-small-${i}`}
-                        cx={x}
-                        cy={y}
-                        r="14"
-                        fill={sectionColors[`outer-small-${i}`] || '#FFFFFF'}
+                      <rect
+                        key={`square1-${i}`}
+                        x={x - size}
+                        y={y - size}
+                        width={size * 2}
+                        height={size * 2}
+                        fill={sectionColors[`square1-${i}`] || '#FFFFFF'}
                         stroke="#333"
                         strokeWidth="2"
-                        onClick={() => handleSectionClick(`outer-small-${i}`)}
+                        onClick={() => handleSectionClick(`square1-${i}`)}
+                        className="cursor-pointer hover:opacity-80 transition-opacity"
+                      />
+                    )
+                  })}
+
+                  {/* FIFTH RING - 12 Pointed Stars */}
+                  {[...Array(12)].map((_, i) => {
+                    const angle = (i * 30) * Math.PI / 180
+                    const x = 250 + Math.cos(angle) * 195
+                    const y = 250 + Math.sin(angle) * 195
+                    const outerRadius = 16
+                    const innerRadius = 8
+                    const points = [...Array(8)].map((_, j) => {
+                      const a = (j * 45) * Math.PI / 180
+                      const r = j % 2 === 0 ? outerRadius : innerRadius
+                      return `${x + Math.cos(a) * r},${y + Math.sin(a) * r}`
+                    }).join(' ')
+                    return (
+                      <polygon
+                        key={`star1-${i}`}
+                        points={points}
+                        fill={sectionColors[`star1-${i}`] || '#FFFFFF'}
+                        stroke="#333"
+                        strokeWidth="2"
+                        onClick={() => handleSectionClick(`star1-${i}`)}
+                        className="cursor-pointer hover:opacity-80 transition-opacity"
+                      />
+                    )
+                  })}
+
+                  {/* OUTER RING - 24 Small Diamonds */}
+                  {[...Array(24)].map((_, i) => {
+                    const angle = (i * 15) * Math.PI / 180
+                    const x = 250 + Math.cos(angle) * 225
+                    const y = 250 + Math.sin(angle) * 225
+                    const size = 8
+                    return (
+                      <rect
+                        key={`diamond2-${i}`}
+                        x={x - size}
+                        y={y - size}
+                        width={size * 2}
+                        height={size * 2}
+                        fill={sectionColors[`diamond2-${i}`] || '#FFFFFF'}
+                        stroke="#333"
+                        strokeWidth="1.5"
+                        transform={`rotate(45 ${x} ${y})`}
+                        onClick={() => handleSectionClick(`diamond2-${i}`)}
                         className="cursor-pointer hover:opacity-80 transition-opacity"
                       />
                     )
