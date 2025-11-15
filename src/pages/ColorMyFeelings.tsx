@@ -125,182 +125,99 @@ const ColorMyFeelings: React.FC = () => {
                 >
                   <rect width="500" height="500" fill="#FAFAFA" />
                   
-                  {/* CENTER SEED POD */}
+                  {/* Center circle */}
                   <circle
                     cx="250"
                     cy="250"
                     r="20"
                     fill={sectionColors['center'] || '#FFFFFF'}
                     stroke="#333"
-                    strokeWidth="1.5"
+                    strokeWidth="2"
                     onClick={() => handleSectionClick('center')}
                     className="cursor-pointer hover:opacity-80 transition-opacity"
                   />
-                  
-                  {/* Center decorative dots - 8 small dots */}
+
+                  {/* Inner petals - 8 petals */}
                   {[...Array(8)].map((_, i) => {
                     const angle = (i * 45) * Math.PI / 180
-                    const x = 250 + Math.cos(angle) * 12
-                    const y = 250 + Math.sin(angle) * 12
+                    const x = 250 + Math.cos(angle) * 50
+                    const y = 250 + Math.sin(angle) * 50
                     return (
-                      <circle
-                        key={`center-dot-${i}`}
+                      <ellipse
+                        key={`inner-petal-${i}`}
                         cx={x}
                         cy={y}
-                        r="2"
-                        fill="#333"
-                        pointerEvents="none"
+                        rx="18"
+                        ry="30"
+                        fill={sectionColors[`inner-petal-${i}`] || '#FFFFFF'}
+                        stroke="#333"
+                        strokeWidth="2"
+                        transform={`rotate(${i * 45} ${x} ${y})`}
+                        onClick={() => handleSectionClick(`inner-petal-${i}`)}
+                        className="cursor-pointer hover:opacity-80 transition-opacity"
                       />
                     )
                   })}
-                  
-                  {/* FIRST PETAL RING - Small pointed petals - 12 petals */}
-                  {[...Array(12)].map((_, i) => {
-                    const angle = (i * 30) * Math.PI / 180
-                    const baseX = 250 + Math.cos(angle) * 30
-                    const baseY = 250 + Math.sin(angle) * 30
-                    const tipX = 250 + Math.cos(angle) * 55
-                    const tipY = 250 + Math.sin(angle) * 55
-                    const leftAngle = angle - 12 * Math.PI / 180
-                    const rightAngle = angle + 12 * Math.PI / 180
-                    const leftX = 250 + Math.cos(leftAngle) * 40
-                    const leftY = 250 + Math.sin(leftAngle) * 40
-                    const rightX = 250 + Math.cos(rightAngle) * 40
-                    const rightY = 250 + Math.sin(rightAngle) * 40
+
+                  {/* Middle layer circles */}
+                  {[...Array(8)].map((_, i) => {
+                    const angle = (i * 45 + 22.5) * Math.PI / 180
+                    const x = 250 + Math.cos(angle) * 95
+                    const y = 250 + Math.sin(angle) * 95
                     return (
-                      <g key={`petal1-${i}`}>
-                        <path
-                          d={`M ${baseX} ${baseY} Q ${leftX} ${leftY}, ${tipX} ${tipY} Q ${rightX} ${rightY}, ${baseX} ${baseY} Z`}
-                          fill={sectionColors[`petal1-${i}`] || '#FFFFFF'}
-                          stroke="#333"
-                          strokeWidth="1.5"
-                          onClick={() => handleSectionClick(`petal1-${i}`)}
-                          className="cursor-pointer hover:opacity-80 transition-opacity"
-                        />
-                        <line x1={baseX} y1={baseY} x2={tipX} y2={tipY} stroke="#333" strokeWidth="0.5" pointerEvents="none" />
-                      </g>
+                      <circle
+                        key={`middle-circle-${i}`}
+                        cx={x}
+                        cy={y}
+                        r="22"
+                        fill={sectionColors[`middle-circle-${i}`] || '#FFFFFF'}
+                        stroke="#333"
+                        strokeWidth="2"
+                        onClick={() => handleSectionClick(`middle-circle-${i}`)}
+                        className="cursor-pointer hover:opacity-80 transition-opacity"
+                      />
                     )
                   })}
 
-                  {/* SECOND PETAL RING - Rounded petals - 16 petals */}
+                  {/* Outer petals - 8 large petals */}
+                  {[...Array(8)].map((_, i) => {
+                    const angle = (i * 45) * Math.PI / 180
+                    const x = 250 + Math.cos(angle) * 150
+                    const y = 250 + Math.sin(angle) * 150
+                    return (
+                      <ellipse
+                        key={`outer-petal-${i}`}
+                        cx={x}
+                        cy={y}
+                        rx="28"
+                        ry="55"
+                        fill={sectionColors[`outer-petal-${i}`] || '#FFFFFF'}
+                        stroke="#333"
+                        strokeWidth="2"
+                        transform={`rotate(${i * 45} ${x} ${y})`}
+                        onClick={() => handleSectionClick(`outer-petal-${i}`)}
+                        className="cursor-pointer hover:opacity-80 transition-opacity"
+                      />
+                    )
+                  })}
+
+                  {/* Outer small circles */}
                   {[...Array(16)].map((_, i) => {
                     const angle = (i * 22.5) * Math.PI / 180
-                    const baseX = 250 + Math.cos(angle) * 60
-                    const baseY = 250 + Math.sin(angle) * 60
-                    const tipX = 250 + Math.cos(angle) * 95
-                    const tipY = 250 + Math.sin(angle) * 95
-                    const ctrl1X = 250 + Math.cos(angle - 0.3) * 80
-                    const ctrl1Y = 250 + Math.sin(angle - 0.3) * 80
-                    const ctrl2X = 250 + Math.cos(angle + 0.3) * 80
-                    const ctrl2Y = 250 + Math.sin(angle + 0.3) * 80
+                    const x = 250 + Math.cos(angle) * 205
+                    const y = 250 + Math.sin(angle) * 205
                     return (
-                      <g key={`petal2-${i}`}>
-                        <path
-                          d={`M ${baseX} ${baseY} Q ${ctrl1X} ${ctrl1Y}, ${tipX} ${tipY} Q ${ctrl2X} ${ctrl2Y}, ${baseX} ${baseY} Z`}
-                          fill={sectionColors[`petal2-${i}`] || '#FFFFFF'}
-                          stroke="#333"
-                          strokeWidth="1.5"
-                          onClick={() => handleSectionClick(`petal2-${i}`)}
-                          className="cursor-pointer hover:opacity-80 transition-opacity"
-                        />
-                        {/* Decorative dots */}
-                        <circle cx={250 + Math.cos(angle) * 75} cy={250 + Math.sin(angle) * 75} r="1.5" fill="#333" pointerEvents="none" />
-                        <circle cx={250 + Math.cos(angle) * 85} cy={250 + Math.sin(angle) * 85} r="1.5" fill="#333" pointerEvents="none" />
-                      </g>
-                    )
-                  })}
-
-                  {/* THIRD PETAL RING - Large ornate petals - 12 petals */}
-                  {[...Array(12)].map((_, i) => {
-                    const angle = (i * 30) * Math.PI / 180
-                    const baseX = 250 + Math.cos(angle) * 100
-                    const baseY = 250 + Math.sin(angle) * 100
-                    const tip1X = 250 + Math.cos(angle) * 140
-                    const tip1Y = 250 + Math.sin(angle) * 140
-                    const leftCtrlX = 250 + Math.cos(angle - 0.4) * 125
-                    const leftCtrlY = 250 + Math.sin(angle - 0.4) * 125
-                    const rightCtrlX = 250 + Math.cos(angle + 0.4) * 125
-                    const rightCtrlY = 250 + Math.sin(angle + 0.4) * 125
-                    return (
-                      <g key={`petal3-${i}`}>
-                        <path
-                          d={`M ${baseX} ${baseY} Q ${leftCtrlX} ${leftCtrlY}, ${tip1X} ${tip1Y} Q ${rightCtrlX} ${rightCtrlY}, ${baseX} ${baseY} Z`}
-                          fill={sectionColors[`petal3-${i}`] || '#FFFFFF'}
-                          stroke="#333"
-                          strokeWidth="1.5"
-                          onClick={() => handleSectionClick(`petal3-${i}`)}
-                          className="cursor-pointer hover:opacity-80 transition-opacity"
-                        />
-                        {/* Inner vein pattern */}
-                        <path
-                          d={`M ${baseX} ${baseY} Q ${250 + Math.cos(angle) * 115} ${250 + Math.sin(angle) * 115}, ${tip1X} ${tip1Y}`}
-                          fill="none"
-                          stroke="#333"
-                          strokeWidth="0.8"
-                          pointerEvents="none"
-                        />
-                        <circle cx={250 + Math.cos(angle) * 120} cy={250 + Math.sin(angle) * 120} r="2" fill="#333" pointerEvents="none" />
-                      </g>
-                    )
-                  })}
-
-                  {/* FOURTH PETAL RING - Elongated leaf petals - 16 petals */}
-                  {[...Array(16)].map((_, i) => {
-                    const angle = (i * 22.5) * Math.PI / 180
-                    const baseX = 250 + Math.cos(angle) * 145
-                    const baseY = 250 + Math.sin(angle) * 145
-                    const tipX = 250 + Math.cos(angle) * 195
-                    const tipY = 250 + Math.sin(angle) * 195
-                    const leftX = 250 + Math.cos(angle - 0.25) * 175
-                    const leftY = 250 + Math.sin(angle - 0.25) * 175
-                    const rightX = 250 + Math.cos(angle + 0.25) * 175
-                    const rightY = 250 + Math.sin(angle + 0.25) * 175
-                    return (
-                      <g key={`petal4-${i}`}>
-                        <path
-                          d={`M ${baseX} ${baseY} Q ${leftX} ${leftY}, ${tipX} ${tipY} Q ${rightX} ${rightY}, ${baseX} ${baseY} Z`}
-                          fill={sectionColors[`petal4-${i}`] || '#FFFFFF'}
-                          stroke="#333"
-                          strokeWidth="1.5"
-                          onClick={() => handleSectionClick(`petal4-${i}`)}
-                          className="cursor-pointer hover:opacity-80 transition-opacity"
-                        />
-                        {/* Leaf veins */}
-                        <line x1={baseX} y1={baseY} x2={tipX} y2={tipY} stroke="#333" strokeWidth="0.6" pointerEvents="none" />
-                        <path
-                          d={`M ${250 + Math.cos(angle) * 165} ${250 + Math.sin(angle) * 165} Q ${250 + Math.cos(angle - 0.15) * 175} ${250 + Math.sin(angle - 0.15) * 175}, ${250 + Math.cos(angle) * 185} ${250 + Math.sin(angle) * 185}`}
-                          fill="none"
-                          stroke="#333"
-                          strokeWidth="0.5"
-                          pointerEvents="none"
-                        />
-                      </g>
-                    )
-                  })}
-
-                  {/* OUTER BORDER - Scalloped edge - 24 scallops */}
-                  {[...Array(24)].map((_, i) => {
-                    const angle = (i * 15) * Math.PI / 180
-                    const nextAngle = ((i + 1) * 15) * Math.PI / 180
-                    const x1 = 250 + Math.cos(angle) * 210
-                    const y1 = 250 + Math.sin(angle) * 210
-                    const x2 = 250 + Math.cos(nextAngle) * 210
-                    const y2 = 250 + Math.sin(nextAngle) * 210
-                    const midAngle = (angle + nextAngle) / 2
-                    const midX = 250 + Math.cos(midAngle) * 225
-                    const midY = 250 + Math.sin(midAngle) * 225
-                    return (
-                      <g key={`scallop-${i}`}>
-                        <path
-                          d={`M ${x1} ${y1} Q ${midX} ${midY}, ${x2} ${y2} L ${250 + Math.cos(nextAngle) * 200} ${250 + Math.sin(nextAngle) * 200} Q ${250 + Math.cos(midAngle) * 200} ${250 + Math.sin(midAngle) * 200}, ${250 + Math.cos(angle) * 200} ${250 + Math.sin(angle) * 200} Z`}
-                          fill={sectionColors[`scallop-${i}`] || '#FFFFFF'}
-                          stroke="#333"
-                          strokeWidth="1.5"
-                          onClick={() => handleSectionClick(`scallop-${i}`)}
-                          className="cursor-pointer hover:opacity-80 transition-opacity"
-                        />
-                        <circle cx={midX} cy={midY} r="2" fill="#333" pointerEvents="none" />
-                      </g>
+                      <circle
+                        key={`outer-small-${i}`}
+                        cx={x}
+                        cy={y}
+                        r="14"
+                        fill={sectionColors[`outer-small-${i}`] || '#FFFFFF'}
+                        stroke="#333"
+                        strokeWidth="2"
+                        onClick={() => handleSectionClick(`outer-small-${i}`)}
+                        className="cursor-pointer hover:opacity-80 transition-opacity"
+                      />
                     )
                   })}
                 </svg>
