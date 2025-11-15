@@ -119,103 +119,103 @@ const ColorMyFeelings: React.FC = () => {
               <div className="mb-6 bg-white rounded-2xl p-6 border-2 border-primary-200">
                 <svg
                   id="interactive-mandala"
-                  viewBox="0 0 400 400"
+                  viewBox="0 0 500 500"
                   className="w-full h-auto"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <rect width="400" height="400" fill="#FAFAFA" />
+                  <rect width="500" height="500" fill="#FAFAFA" />
                   
-                  {/* Center star */}
+                  {/* Center lotus - 6 curved lotus petals */}
+                  {[...Array(6)].map((_, i) => {
+                    const angle = (i * 60) * Math.PI / 180
+                    const x = 250
+                    const y = 250
+                    const petalX = x + Math.cos(angle) * 25
+                    const petalY = y + Math.sin(angle) * 25
+                    return (
+                      <path
+                        key={`lotus-${i}`}
+                        d={`M ${x} ${y} Q ${petalX - Math.sin(angle) * 15} ${petalY + Math.cos(angle) * 15}, ${petalX} ${petalY} Q ${petalX + Math.sin(angle) * 15} ${petalY - Math.cos(angle) * 15}, ${x} ${y} Z`}
+                        fill={sectionColors[`lotus-${i}`] || '#FFFFFF'}
+                        stroke="#333"
+                        strokeWidth="1.2"
+                        onClick={() => handleSectionClick(`lotus-${i}`)}
+                        className="cursor-pointer hover:opacity-80 transition-opacity"
+                      />
+                    )
+                  })}
+                  
+                  {/* Center circle */}
                   <circle
-                    cx="200"
-                    cy="200"
-                    r="10"
+                    cx="250"
+                    cy="250"
+                    r="12"
                     fill={sectionColors['center'] || '#FFFFFF'}
                     stroke="#333"
-                    strokeWidth="1"
+                    strokeWidth="1.2"
                     onClick={() => handleSectionClick('center')}
                     className="cursor-pointer hover:opacity-80 transition-opacity"
                   />
                   
-                  {/* Tiny center petals - 8 petals */}
+                  {/* Star points - 8 pointed star */}
                   {[...Array(8)].map((_, i) => {
                     const angle = (i * 45) * Math.PI / 180
-                    const x = 200 + Math.cos(angle) * 18
-                    const y = 200 + Math.sin(angle) * 18
+                    const x = 250
+                    const y = 250
+                    const tipX = x + Math.cos(angle) * 50
+                    const tipY = y + Math.sin(angle) * 50
+                    const leftAngle = angle - 20 * Math.PI / 180
+                    const rightAngle = angle + 20 * Math.PI / 180
+                    const leftX = x + Math.cos(leftAngle) * 30
+                    const leftY = y + Math.sin(leftAngle) * 30
+                    const rightX = x + Math.cos(rightAngle) * 30
+                    const rightY = y + Math.sin(rightAngle) * 30
                     return (
-                      <ellipse
-                        key={`tiny-petal-${i}`}
-                        cx={x}
-                        cy={y}
-                        rx="5"
-                        ry="12"
-                        fill={sectionColors[`tiny-petal-${i}`] || '#FFFFFF'}
+                      <path
+                        key={`star-${i}`}
+                        d={`M ${x} ${y} L ${leftX} ${leftY} L ${tipX} ${tipY} L ${rightX} ${rightY} Z`}
+                        fill={sectionColors[`star-${i}`] || '#FFFFFF'}
                         stroke="#333"
-                        strokeWidth="1"
-                        transform={`rotate(${i * 45} ${x} ${y})`}
-                        onClick={() => handleSectionClick(`tiny-petal-${i}`)}
+                        strokeWidth="1.2"
+                        onClick={() => handleSectionClick(`star-${i}`)}
                         className="cursor-pointer hover:opacity-80 transition-opacity"
                       />
                     )
                   })}
 
-                  {/* First ring of small circles */}
+                  {/* Hearts - 8 hearts */}
                   {[...Array(8)].map((_, i) => {
                     const angle = (i * 45 + 22.5) * Math.PI / 180
-                    const x = 200 + Math.cos(angle) * 30
-                    const y = 200 + Math.sin(angle) * 30
+                    const x = 250 + Math.cos(angle) * 75
+                    const y = 250 + Math.sin(angle) * 75
                     return (
-                      <circle
-                        key={`ring1-${i}`}
-                        cx={x}
-                        cy={y}
-                        r="6"
-                        fill={sectionColors[`ring1-${i}`] || '#FFFFFF'}
+                      <path
+                        key={`heart-${i}`}
+                        d={`M ${x} ${y} C ${x-10} ${y-10}, ${x-15} ${y-3}, ${x} ${y+5} C ${x+15} ${y-3}, ${x+10} ${y-10}, ${x} ${y} Z`}
+                        fill={sectionColors[`heart-${i}`] || '#FFFFFF'}
                         stroke="#333"
-                        strokeWidth="1"
-                        onClick={() => handleSectionClick(`ring1-${i}`)}
+                        strokeWidth="1.2"
+                        onClick={() => handleSectionClick(`heart-${i}`)}
                         className="cursor-pointer hover:opacity-80 transition-opacity"
                       />
                     )
                   })}
 
-                  {/* Inner flower petals - 12 petals */}
+                  {/* Decorative diamonds - 12 diamonds */}
                   {[...Array(12)].map((_, i) => {
                     const angle = (i * 30) * Math.PI / 180
-                    const x = 200 + Math.cos(angle) * 45
-                    const y = 200 + Math.sin(angle) * 45
-                    return (
-                      <ellipse
-                        key={`inner-petal-${i}`}
-                        cx={x}
-                        cy={y}
-                        rx="7"
-                        ry="16"
-                        fill={sectionColors[`inner-petal-${i}`] || '#FFFFFF'}
-                        stroke="#333"
-                        strokeWidth="1"
-                        transform={`rotate(${i * 30} ${x} ${y})`}
-                        onClick={() => handleSectionClick(`inner-petal-${i}`)}
-                        className="cursor-pointer hover:opacity-80 transition-opacity"
-                      />
-                    )
-                  })}
-
-                  {/* Decorative diamonds - 8 diamonds */}
-                  {[...Array(8)].map((_, i) => {
-                    const angle = (i * 45) * Math.PI / 180
-                    const x = 200 + Math.cos(angle) * 65
-                    const y = 200 + Math.sin(angle) * 65
+                    const x = 250 + Math.cos(angle) * 100
+                    const y = 250 + Math.sin(angle) * 100
                     return (
                       <rect
                         key={`diamond-${i}`}
-                        x={x - 8}
-                        y={y - 8}
-                        width="16"
-                        height="16"
+                        x={x - 10}
+                        y={y - 10}
+                        width="20"
+                        height="20"
                         fill={sectionColors[`diamond-${i}`] || '#FFFFFF'}
                         stroke="#333"
-                        strokeWidth="1"
+                        strokeWidth="1.2"
                         transform={`rotate(45 ${x} ${y})`}
                         onClick={() => handleSectionClick(`diamond-${i}`)}
                         className="cursor-pointer hover:opacity-80 transition-opacity"
@@ -223,149 +223,101 @@ const ColorMyFeelings: React.FC = () => {
                     )
                   })}
 
-                  {/* Mid-layer leaves - 8 leaves */}
-                  {[...Array(8)].map((_, i) => {
-                    const angle = (i * 45 + 22.5) * Math.PI / 180
-                    const x = 200 + Math.cos(angle) * 80
-                    const y = 200 + Math.sin(angle) * 80
-                    return (
-                      <ellipse
-                        key={`leaf-${i}`}
-                        cx={x}
-                        cy={y}
-                        rx="10"
-                        ry="24"
-                        fill={sectionColors[`leaf-${i}`] || '#FFFFFF'}
-                        stroke="#333"
-                        strokeWidth="1"
-                        transform={`rotate(${i * 45 + 22.5} ${x} ${y})`}
-                        onClick={() => handleSectionClick(`leaf-${i}`)}
-                        className="cursor-pointer hover:opacity-80 transition-opacity"
-                      />
-                    )
-                  })}
-
-                  {/* Second ring circles - 16 circles */}
-                  {[...Array(16)].map((_, i) => {
-                    const angle = (i * 22.5) * Math.PI / 180
-                    const x = 200 + Math.cos(angle) * 100
-                    const y = 200 + Math.sin(angle) * 100
-                    return (
-                      <circle
-                        key={`ring2-${i}`}
-                        cx={x}
-                        cy={y}
-                        r="8"
-                        fill={sectionColors[`ring2-${i}`] || '#FFFFFF'}
-                        stroke="#333"
-                        strokeWidth="1"
-                        onClick={() => handleSectionClick(`ring2-${i}`)}
-                        className="cursor-pointer hover:opacity-80 transition-opacity"
-                      />
-                    )
-                  })}
-
-                  {/* Large outer petals - 8 main petals */}
+                  {/* Paisley/leaf sprays - 8 paisleys */}
                   {[...Array(8)].map((_, i) => {
                     const angle = (i * 45) * Math.PI / 180
-                    const x = 200 + Math.cos(angle) * 125
-                    const y = 200 + Math.sin(angle) * 125
+                    const x = 250 + Math.cos(angle) * 130
+                    const y = 250 + Math.sin(angle) * 130
+                    const tipX = x + Math.cos(angle) * 30
+                    const tipY = y + Math.sin(angle) * 30
                     return (
-                      <ellipse
-                        key={`large-petal-${i}`}
-                        cx={x}
-                        cy={y}
-                        rx="18"
-                        ry="42"
-                        fill={sectionColors[`large-petal-${i}`] || '#FFFFFF'}
+                      <path
+                        key={`paisley-${i}`}
+                        d={`M ${x} ${y} Q ${x + Math.cos(angle + 0.5) * 25} ${y + Math.sin(angle + 0.5) * 25}, ${tipX} ${tipY} Q ${x + Math.cos(angle - 0.5) * 25} ${y + Math.sin(angle - 0.5) * 25}, ${x} ${y} Z`}
+                        fill={sectionColors[`paisley-${i}`] || '#FFFFFF'}
                         stroke="#333"
-                        strokeWidth="1"
-                        transform={`rotate(${i * 45} ${x} ${y})`}
-                        onClick={() => handleSectionClick(`large-petal-${i}`)}
+                        strokeWidth="1.2"
+                        onClick={() => handleSectionClick(`paisley-${i}`)}
                         className="cursor-pointer hover:opacity-80 transition-opacity"
                       />
                     )
                   })}
 
-                  {/* Petal tips - 8 small circles at petal tips */}
-                  {[...Array(8)].map((_, i) => {
-                    const angle = (i * 45) * Math.PI / 180
-                    const x = 200 + Math.cos(angle) * 155
-                    const y = 200 + Math.sin(angle) * 155
-                    return (
-                      <circle
-                        key={`petal-tip-${i}`}
-                        cx={x}
-                        cy={y}
-                        r="10"
-                        fill={sectionColors[`petal-tip-${i}`] || '#FFFFFF'}
-                        stroke="#333"
-                        strokeWidth="1"
-                        onClick={() => handleSectionClick(`petal-tip-${i}`)}
-                        className="cursor-pointer hover:opacity-80 transition-opacity"
-                      />
-                    )
-                  })}
-
-                  {/* Accent petals between main - 8 petals */}
+                  {/* Triangles - 8 triangles */}
                   {[...Array(8)].map((_, i) => {
                     const angle = (i * 45 + 22.5) * Math.PI / 180
-                    const x = 200 + Math.cos(angle) * 140
-                    const y = 200 + Math.sin(angle) * 140
+                    const x = 250 + Math.cos(angle) * 160
+                    const y = 250 + Math.sin(angle) * 160
+                    const size = 15
                     return (
-                      <ellipse
-                        key={`accent-petal-${i}`}
-                        cx={x}
-                        cy={y}
-                        rx="12"
-                        ry="28"
-                        fill={sectionColors[`accent-petal-${i}`] || '#FFFFFF'}
+                      <polygon
+                        key={`triangle-${i}`}
+                        points={`${x},${y-size} ${x-size},${y+size} ${x+size},${y+size}`}
+                        fill={sectionColors[`triangle-${i}`] || '#FFFFFF'}
                         stroke="#333"
-                        strokeWidth="1"
-                        transform={`rotate(${i * 45 + 22.5} ${x} ${y})`}
-                        onClick={() => handleSectionClick(`accent-petal-${i}`)}
+                        strokeWidth="1.2"
+                        onClick={() => handleSectionClick(`triangle-${i}`)}
                         className="cursor-pointer hover:opacity-80 transition-opacity"
                       />
                     )
                   })}
 
-                  {/* Decorative teardrops - 16 teardrops */}
-                  {[...Array(16)].map((_, i) => {
-                    const angle = (i * 22.5) * Math.PI / 180
-                    const x = 200 + Math.cos(angle) * 165
-                    const y = 200 + Math.sin(angle) * 165
+                  {/* Hexagons - 6 hexagons */}
+                  {[...Array(6)].map((_, i) => {
+                    const angle = (i * 60) * Math.PI / 180
+                    const x = 250 + Math.cos(angle) * 185
+                    const y = 250 + Math.sin(angle) * 185
+                    const size = 12
+                    const points = [...Array(6)].map((_, j) => {
+                      const a = (j * 60) * Math.PI / 180
+                      return `${x + Math.cos(a) * size},${y + Math.sin(a) * size}`
+                    }).join(' ')
                     return (
-                      <ellipse
-                        key={`teardrop-${i}`}
-                        cx={x}
-                        cy={y}
-                        rx="6"
-                        ry="14"
-                        fill={sectionColors[`teardrop-${i}`] || '#FFFFFF'}
+                      <polygon
+                        key={`hexagon-${i}`}
+                        points={points}
+                        fill={sectionColors[`hexagon-${i}`] || '#FFFFFF'}
                         stroke="#333"
-                        strokeWidth="1"
-                        transform={`rotate(${i * 22.5} ${x} ${y})`}
-                        onClick={() => handleSectionClick(`teardrop-${i}`)}
+                        strokeWidth="1.2"
+                        onClick={() => handleSectionClick(`hexagon-${i}`)}
                         className="cursor-pointer hover:opacity-80 transition-opacity"
                       />
                     )
                   })}
 
-                  {/* Outer ring dots - 24 small dots */}
+                  {/* Decorative arches - 12 arches */}
+                  {[...Array(12)].map((_, i) => {
+                    const angle = (i * 30) * Math.PI / 180
+                    const x = 250 + Math.cos(angle) * 210
+                    const y = 250 + Math.sin(angle) * 210
+                    return (
+                      <path
+                        key={`arch-${i}`}
+                        d={`M ${x-8} ${y+10} Q ${x} ${y-5}, ${x+8} ${y+10} L ${x+5} ${y+12} Q ${x} ${y}, ${x-5} ${y+12} Z`}
+                        fill={sectionColors[`arch-${i}`] || '#FFFFFF'}
+                        stroke="#333"
+                        strokeWidth="1.2"
+                        onClick={() => handleSectionClick(`arch-${i}`)}
+                        className="cursor-pointer hover:opacity-80 transition-opacity"
+                      />
+                    )
+                  })}
+
+                  {/* Outer border filigree - 24 small decorative elements */}
                   {[...Array(24)].map((_, i) => {
                     const angle = (i * 15) * Math.PI / 180
-                    const x = 200 + Math.cos(angle) * 180
-                    const y = 200 + Math.sin(angle) * 180
+                    const x = 250 + Math.cos(angle) * 230
+                    const y = 250 + Math.sin(angle) * 230
                     return (
                       <circle
-                        key={`outer-dot-${i}`}
+                        key={`filigree-${i}`}
                         cx={x}
                         cy={y}
-                        r="5"
-                        fill={sectionColors[`outer-dot-${i}`] || '#FFFFFF'}
+                        r="6"
+                        fill={sectionColors[`filigree-${i}`] || '#FFFFFF'}
                         stroke="#333"
-                        strokeWidth="1"
-                        onClick={() => handleSectionClick(`outer-dot-${i}`)}
+                        strokeWidth="1.2"
+                        onClick={() => handleSectionClick(`filigree-${i}`)}
                         className="cursor-pointer hover:opacity-80 transition-opacity"
                       />
                     )
