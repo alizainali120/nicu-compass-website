@@ -21,6 +21,7 @@ import TheLittleFighter from './pages/TheLittleFighter'
 import DreamsInsideTheIncubator from './pages/DreamsInsideTheIncubator'
 import ParentStories from './pages/ParentStories'
 import DischargePlanning from './pages/DischargePlanning'
+import GoingHomeAfterNICU from './pages/GoingHomeAfterNICU'
 import ParentWellness from './pages/ParentWellness'
 import ColorMyFeelings from './pages/ColorMyFeelings'
 import FinancialResources from './pages/FinancialResources'
@@ -257,6 +258,7 @@ const App: React.FC = () => {
         <Route path="/nicu-term-challenge" element={<NICUTermChallenge />} />
         <Route path="/parent-stories" element={<ParentStories />} />
         <Route path="/discharge-planning" element={<DischargePlanning />} />
+        <Route path="/going-home-after-nicu" element={<GoingHomeAfterNICU />} />
         <Route path="/parent-wellness" element={<ParentWellness />} />
         <Route path="/color-my-feelings" element={<ColorMyFeelings />} />
         <Route path="/financial-resources" element={<FinancialResources />} />

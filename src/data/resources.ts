@@ -88,6 +88,12 @@ export const resourceCards: ResourceCard[] = [
     category: 'practical',
     details: {
       subtitle: 'Ready for the next chapter',
+      articles: [
+        {
+          title: 'Going Home After the NICU: Tips for Parents',
+          link: '/going-home-after-nicu'
+        }
+      ],
       content: [
         'Creating a safe and welcoming home environment',
         'Essential baby care supplies and equipment setup',
