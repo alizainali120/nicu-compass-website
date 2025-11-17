@@ -10,6 +10,7 @@ import FeedingInNICU from './pages/FeedingInNICU'
 import MilkComparison from './pages/MilkComparison'
 import DonorMilkFAQ from './pages/DonorMilkFAQ'
 import RefluxAndColic from './pages/RefluxAndColic'
+import RespiratorySupport from './pages/RespiratorySupport'
 import ConnectionsGame from './pages/ConnectionsGame'
 import ConnectionsGame2 from './pages/ConnectionsGame2'
 import NICUWordMatch from './pages/NICUWordMatch'
@@ -249,6 +250,7 @@ const App: React.FC = () => {
         <Route path="/milk-comparison" element={<MilkComparison />} />
         <Route path="/donor-milk-faq" element={<DonorMilkFAQ />} />
         <Route path="/reflux-and-colic" element={<RefluxAndColic />} />
+        <Route path="/respiratory-support" element={<RespiratorySupport />} />
         <Route path="/nicu-word-match" element={<NICUWordMatch />} />
         <Route path="/nicu-word-builder" element={<NICUWordBuilder />} />
         <Route path="/match-the-nicu-term" element={<MatchTheNICUTerm />} />

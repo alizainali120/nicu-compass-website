@@ -33,6 +33,10 @@ export const resourceCards: ResourceCard[] = [
         {
           title: 'Gastroesophageal Reflux & Colic in Preterm and Newborn Babies',
           link: '/reflux-and-colic'
+        },
+        {
+          title: 'Understanding Respiratory Support in the NICU',
+          link: '/respiratory-support'
         }
       ]
     }
