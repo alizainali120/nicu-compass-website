@@ -56,6 +56,16 @@ const nicuTerms: NICUTerm[] = [
     whatItMeans: "An eye condition in preterm babies; eye exams are done to detect it early."
   },
   {
+    term: "NEC",
+    meaning: "Necrotizing Enterocolitis",
+    whatItMeans: "A serious intestinal disease in premature infants. The NICU monitors feeding tolerance closely to detect it early."
+  },
+  {
+    term: "IUGR",
+    meaning: "Intrauterine Growth Restriction",
+    whatItMeans: "A condition where a baby grows slower than expected in the womb. These babies may need extra monitoring and special nutrition."
+  },
+  {
     term: "NPO",
     meaning: "Nil Per Os (Latin for \"nothing by mouth\")",
     whatItMeans: "Means no feedings are given by mouth or tube temporarily."
