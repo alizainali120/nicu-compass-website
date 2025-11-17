@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 const RespiratorySupport: React.FC = () => {
   const [activeDevice, setActiveDevice] = useState<string>('nasal-cannula')
   
-  // Stock images
-  const nasalCannulaImg = '/stock_images/newborn_baby_with_na_244da65e.jpg'
-  const cpapImg = '/stock_images/premature_baby_cpap__8a2b5219.jpg'
-  const ventilatorImg = '/stock_images/infant_ventilator_br_faddfeda.jpg'
+  // Stock images - actual medical equipment
+  const nasalCannulaImg = '/stock_images/nasal_cannula_oxygen_fa36d9bd.jpg'
+  const cpapImg = '/stock_images/cpap_machine_equipme_d8e83149.jpg'
+  const ventilatorImg = '/stock_images/mechanical_ventilato_13dccca8.jpg'
   const respiratoryEquipmentImg = '/stock_images/neonatal_respiratory_fce63762.jpg'
 
   return (
