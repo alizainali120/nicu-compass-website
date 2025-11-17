@@ -92,6 +92,10 @@ export const resourceCards: ResourceCard[] = [
         {
           title: 'Going Home After the NICU: Tips for Parents',
           link: '/going-home-after-nicu'
+        },
+        {
+          title: 'NICU Discharge Checklist',
+          link: '/nicu-discharge-checklist'
         }
       ],
       content: [
