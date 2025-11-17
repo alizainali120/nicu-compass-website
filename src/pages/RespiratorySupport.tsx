@@ -3,12 +3,6 @@ import { Link } from 'react-router-dom'
 
 const RespiratorySupport: React.FC = () => {
   const [activeDevice, setActiveDevice] = useState<string>('nasal-cannula')
-  
-  // Stock images - actual medical equipment
-  const nasalCannulaImg = '/stock_images/nasal_cannula_oxygen_fa36d9bd.jpg'
-  const cpapImg = '/stock_images/cpap_machine_equipme_d8e83149.jpg'
-  const ventilatorImg = '/stock_images/mechanical_ventilato_13dccca8.jpg'
-  const respiratoryEquipmentImg = '/stock_images/neonatal_respiratory_fce63762.jpg'
 
   return (
     <div className="nicu-guide-page-bg section-padding">
@@ -73,13 +67,6 @@ const RespiratorySupport: React.FC = () => {
               {activeDevice === 'nasal-cannula' && (
                 <div className="bg-white rounded-xl p-6 border-2 border-primary-200">
                   <h3 className="text-xl font-bold text-primary-700 mb-4">Nasal Cannula (Low Flow)</h3>
-                  <div className="mb-6">
-                    <img 
-                      src={nasalCannulaImg} 
-                      alt="Baby with nasal cannula oxygen support" 
-                      className="w-full max-w-2xl mx-auto rounded-lg shadow-lg"
-                    />
-                  </div>
                   <div className="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
                     <p className="text-blue-900 mb-2"><strong>What it is:</strong> A small tube with soft prongs that sit just inside your baby's nostrils. It gives extra oxygen to help your baby breathe comfortably.</p>
                     <p className="text-blue-900 mb-2"><strong>Flow:</strong> Usually 0.5–2 liters per minute for newborns</p>
@@ -92,13 +79,6 @@ const RespiratorySupport: React.FC = () => {
               {activeDevice === 'hfnc' && (
                 <div className="bg-white rounded-xl p-6 border-2 border-primary-200">
                   <h3 className="text-xl font-bold text-primary-700 mb-4">High-Flow Nasal Cannula (HFNC)</h3>
-                  <div className="mb-6">
-                    <img 
-                      src={respiratoryEquipmentImg} 
-                      alt="High-flow nasal cannula respiratory equipment" 
-                      className="w-full max-w-2xl mx-auto rounded-lg shadow-lg"
-                    />
-                  </div>
                   <div className="bg-purple-50 rounded-lg p-4 border-l-4 border-purple-500">
                     <p className="text-purple-900 mb-2"><strong>What it is:</strong> Gives warmed, humidified air at a higher flow. This flow creates a gentle pressure that helps keep tiny air sacs (alveoli) from collapsing.</p>
                     <p className="text-purple-900 mb-2"><strong>Flow:</strong> Higher than regular nasal cannula (2–8+ liters per minute)</p>
@@ -112,13 +92,6 @@ const RespiratorySupport: React.FC = () => {
               {activeDevice === 'cpap' && (
                 <div className="bg-white rounded-xl p-6 border-2 border-primary-200">
                   <h3 className="text-xl font-bold text-primary-700 mb-4">CPAP (Continuous Positive Airway Pressure)</h3>
-                  <div className="mb-6">
-                    <img 
-                      src={cpapImg} 
-                      alt="Premature baby with CPAP mask breathing support" 
-                      className="w-full max-w-2xl mx-auto rounded-lg shadow-lg"
-                    />
-                  </div>
                   <div className="bg-indigo-50 rounded-lg p-4 border-l-4 border-indigo-500">
                     <p className="text-indigo-900 mb-2"><strong>What it is:</strong> Provides a steady pressure to keep your baby's lungs open during breathing. Often used in premature babies whose lungs are not fully developed.</p>
                     <p className="text-indigo-900 mb-2"><strong>Typical starting pressure:</strong> +4 or +5</p>
@@ -132,13 +105,6 @@ const RespiratorySupport: React.FC = () => {
               {activeDevice === 'nippv' && (
                 <div className="bg-white rounded-xl p-6 border-2 border-primary-200">
                   <h3 className="text-xl font-bold text-primary-700 mb-4">NIPPV (Non-Invasive Positive Pressure Ventilation)</h3>
-                  <div className="mb-6">
-                    <img 
-                      src={cpapImg} 
-                      alt="Baby with NIPPV breathing support" 
-                      className="w-full max-w-2xl mx-auto rounded-lg shadow-lg"
-                    />
-                  </div>
                   <div className="bg-pink-50 rounded-lg p-4 border-l-4 border-pink-500">
                     <p className="text-pink-900 mb-2"><strong>What it is:</strong> Like CPAP but includes a backup breathing rate. This helps babies who sometimes forget to breathe on their own.</p>
                     <p className="text-pink-900 mb-2"><strong>Why it helps:</strong> Preemies may have immature breathing centers. NIPPV provides gentle 'reminder breaths.'</p>
@@ -152,13 +118,6 @@ const RespiratorySupport: React.FC = () => {
               {activeDevice === 'ventilator' && (
                 <div className="bg-white rounded-xl p-6 border-2 border-primary-200">
                   <h3 className="text-xl font-bold text-primary-700 mb-4">Mechanical Ventilator (Breathing Tube)</h3>
-                  <div className="mb-6">
-                    <img 
-                      src={ventilatorImg} 
-                      alt="Infant ventilator breathing equipment" 
-                      className="w-full max-w-2xl mx-auto rounded-lg shadow-lg"
-                    />
-                  </div>
                   <div className="bg-blue-50 rounded-lg p-4 border-l-4 border-blue-500">
                     <p className="text-blue-900 mb-2"><strong>What it is:</strong> Used for extremely premature babies or older infants who need help breathing. A breathing tube (ETT) is placed in the windpipe and connected to a ventilator.</p>
                     <p className="text-blue-900 mb-2"><strong>Rate:</strong> Number of breaths per minute. Higher = more help; lower = baby doing more breathing.</p>
