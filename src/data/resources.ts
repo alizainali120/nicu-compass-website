@@ -29,6 +29,10 @@ export const resourceCards: ResourceCard[] = [
         {
           title: 'Donor Milk in the NICU: What Parents Often Ask',
           link: '/donor-milk-faq'
+        },
+        {
+          title: 'Gastroesophageal Reflux & Colic in Preterm and Newborn Babies',
+          link: '/reflux-and-colic'
         }
       ]
     }
