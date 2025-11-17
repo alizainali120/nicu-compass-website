@@ -129,6 +129,203 @@ const RespiratorySupport: React.FC = () => {
               )}
             </div>
 
+            {/* What Is a Spell? */}
+            <section className="mb-8">
+              <div className="bg-gradient-to-br from-sky-50 to-blue-100/50 rounded-2xl p-6 sm:p-8 border-l-4 border-sky-500">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-sky-900">
+                  What Is a "Spell"?
+                </h2>
+                <p className="text-lg text-sky-900 leading-relaxed mb-6">
+                  Most NICU parents hear "spells" without understanding. Here's what it means:
+                </p>
+                
+                <div className="bg-white rounded-xl p-6 mb-6">
+                  <p className="text-xl font-bold text-sky-900 mb-4">A spell = brief event that improves with time</p>
+                  
+                  <div className="grid md:grid-cols-3 gap-4 mb-6">
+                    <div className="bg-sky-50 rounded-lg p-4 border-l-4 border-sky-400">
+                      <p className="font-bold text-sky-900 mb-2">Apnea</p>
+                      <p className="text-sky-800 text-sm">Baby pauses breathing</p>
+                    </div>
+                    <div className="bg-pink-50 rounded-lg p-4 border-l-4 border-pink-400">
+                      <p className="font-bold text-pink-900 mb-2">Bradycardia</p>
+                      <p className="text-pink-800 text-sm">Heart rate dips</p>
+                    </div>
+                    <div className="bg-purple-50 rounded-lg p-4 border-l-4 border-purple-400">
+                      <p className="font-bold text-purple-900 mb-2">Desaturation</p>
+                      <p className="text-purple-800 text-sm">Oxygen level drops</p>
+                    </div>
+                  </div>
+
+                  <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-6">
+                    <p className="text-green-900 font-semibold mb-2">✓ Normal in preemies</p>
+                    <p className="text-green-900 font-semibold mb-2">✓ Not their fault</p>
+                    <p className="text-green-900 font-semibold">✓ Not dangerous when monitored</p>
+                  </div>
+                </div>
+
+                {/* Visual Diagram */}
+                <div className="bg-white rounded-xl p-6">
+                  <h3 className="text-xl font-bold text-sky-900 mb-4 text-center">Why Do Spells Happen?</h3>
+                  <div className="grid md:grid-cols-3 gap-6">
+                    <div className="text-center">
+                      <div className="w-20 h-20 mx-auto mb-3 bg-pink-100 rounded-full flex items-center justify-center">
+                        <span className="text-3xl">🫁</span>
+                      </div>
+                      <p className="font-bold text-pink-900 mb-2">Lungs</p>
+                      <p className="text-pink-800 text-sm">Small & immature</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-20 h-20 mx-auto mb-3 bg-purple-100 rounded-full flex items-center justify-center">
+                        <span className="text-3xl">🧠</span>
+                      </div>
+                      <p className="font-bold text-purple-900 mb-2">Brain</p>
+                      <p className="text-purple-800 text-sm">"Breathing center" still developing</p>
+                    </div>
+                    <div className="text-center">
+                      <div className="w-20 h-20 mx-auto mb-3 bg-green-100 rounded-full flex items-center justify-center">
+                        <span className="text-3xl">📈</span>
+                      </div>
+                      <p className="font-bold text-green-900 mb-2">With Growth</p>
+                      <p className="text-green-800 text-sm">Episodes disappear</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* What You Can Do During Respiratory Support */}
+            <section className="mb-8">
+              <div className="bg-gradient-to-br from-violet-50 to-purple-100/50 rounded-2xl p-6 sm:p-8 border-l-4 border-violet-500">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-3xl">🎧</span>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-violet-900">
+                    What You Can Do During Respiratory Support
+                  </h2>
+                </div>
+                <p className="text-lg text-violet-900 leading-relaxed mb-6 italic">
+                  Parents feel helpless—this turns it around.
+                </p>
+
+                <div className="bg-white rounded-xl p-6">
+                  <h3 className="text-xl font-bold text-violet-900 mb-4">Things You Can Do:</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start">
+                      <span className="text-violet-600 font-bold text-xl mr-3">✓</span>
+                      <div>
+                        <p className="text-violet-900 font-semibold">Read to your baby</p>
+                        <p className="text-violet-800 text-sm">Voice stabilizes breathing!</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <span className="text-violet-600 font-bold text-xl mr-3">✓</span>
+                      <div>
+                        <p className="text-violet-900 font-semibold">Provide hand-hugs</p>
+                        <p className="text-violet-800 text-sm">Containment touch helps baby feel secure</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <span className="text-violet-600 font-bold text-xl mr-3">✓</span>
+                      <div>
+                        <p className="text-violet-900 font-semibold">Kangaroo care when allowed</p>
+                        <p className="text-violet-800 text-sm">Skin-to-skin contact supports breathing and bonding</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <span className="text-violet-600 font-bold text-xl mr-3">✓</span>
+                      <div>
+                        <p className="text-violet-900 font-semibold">Pump and provide breastmilk</p>
+                        <p className="text-violet-800 text-sm">"Medicine for lungs"</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <span className="text-violet-600 font-bold text-xl mr-3">✓</span>
+                      <div>
+                        <p className="text-violet-900 font-semibold">Learn baby's cues</p>
+                        <p className="text-violet-800 text-sm">Overstimulation vs comfort</p>
+                      </div>
+                    </div>
+                    <div className="flex items-start">
+                      <span className="text-violet-600 font-bold text-xl mr-3">✓</span>
+                      <div>
+                        <p className="text-violet-900 font-semibold">Track small wins</p>
+                        <p className="text-violet-800 text-sm">Fewer spells, smoother breathing, quieter alarms</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* CPAP/HFNC Myth vs. Fact */}
+            <section className="mb-8">
+              <div className="bg-gradient-to-br from-rose-50 to-pink-100/50 rounded-2xl p-6 sm:p-8 border-l-4 border-rose-500">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-rose-900">
+                  CPAP/HFNC Myth vs. Fact
+                </h2>
+                
+                <div className="space-y-4">
+                  <div className="bg-white rounded-lg p-5 border-l-4 border-red-400">
+                    <p className="font-bold text-red-900 mb-2">❌ Myth: "The prongs look uncomfortable."</p>
+                    <p className="text-green-900"><strong>✓ Fact:</strong> CPAP relieves work of breathing and helps babies rest.</p>
+                  </div>
+
+                  <div className="bg-white rounded-lg p-5 border-l-4 border-red-400">
+                    <p className="font-bold text-red-900 mb-2">❌ Myth: "High flow means my baby is worse."</p>
+                    <p className="text-green-900"><strong>✓ Fact:</strong> It may actually mean the baby is ready to step down from CPAP.</p>
+                  </div>
+
+                  <div className="bg-white rounded-lg p-5 border-l-4 border-red-400">
+                    <p className="font-bold text-red-900 mb-2">❌ Myth: "Alarms mean emergency."</p>
+                    <p className="text-green-900"><strong>✓ Fact:</strong> 80% of alarms are due to movement or loose leads.</p>
+                  </div>
+
+                  <div className="bg-white rounded-lg p-5 border-l-4 border-red-400">
+                    <p className="font-bold text-red-900 mb-2">❌ Myth: "CPAP prevents holding my baby."</p>
+                    <p className="text-green-900"><strong>✓ Fact:</strong> Many babies can be held on CPAP — ask your nurse.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Breathing Cues 101 */}
+            <section className="mb-8">
+              <div className="bg-gradient-to-br from-teal-50 to-cyan-100/50 rounded-2xl p-6 sm:p-8 border-l-4 border-teal-500">
+                <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-teal-900">
+                  Breathing Cues 101
+                </h2>
+                <p className="text-lg text-teal-900 leading-relaxed mb-6">
+                  Signs baby is working too hard or doing well:
+                </p>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-white rounded-xl p-6">
+                    <h3 className="text-xl font-bold text-red-900 mb-4">⚠️ Working Too Hard</h3>
+                    <ul className="space-y-2">
+                      <li className="text-red-800">• Fast, shallow breathing</li>
+                      <li className="text-red-800">• Chest retractions (pulling in)</li>
+                      <li className="text-red-800">• Nasal flaring</li>
+                      <li className="text-red-800">• Grunting sounds</li>
+                      <li className="text-red-800">• Color changes (pale or dusky)</li>
+                    </ul>
+                    <p className="text-red-900 font-semibold mt-4 text-sm">→ Tell your nurse if you notice these</p>
+                  </div>
+
+                  <div className="bg-white rounded-xl p-6">
+                    <h3 className="text-xl font-bold text-green-900 mb-4">✓ Doing Well</h3>
+                    <ul className="space-y-2">
+                      <li className="text-green-800">• Calm, regular breathing</li>
+                      <li className="text-green-800">• Pink color</li>
+                      <li className="text-green-800">• Relaxed chest movements</li>
+                      <li className="text-green-800">• Peaceful sleep</li>
+                      <li className="text-green-800">• Good alertness when awake</li>
+                    </ul>
+                    <p className="text-green-900 font-semibold mt-4 text-sm">→ These are signs of comfortable breathing</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
             {/* What Numbers Should Parents Pay Attention To */}
             <section className="mb-8">
               <div className="bg-gradient-to-br from-amber-50 to-amber-100/50 rounded-2xl p-6 sm:p-8 border-l-4 border-amber-500">

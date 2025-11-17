@@ -37,6 +37,10 @@ export const resourceCards: ResourceCard[] = [
         {
           title: 'Understanding Respiratory Support in the NICU',
           link: '/respiratory-support'
+        },
+        {
+          title: 'How to Read the Monitor Without Stressing (Parent Cheatsheet)',
+          link: '/monitor-cheatsheet'
         }
       ]
     }
