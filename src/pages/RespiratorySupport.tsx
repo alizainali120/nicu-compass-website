@@ -135,9 +135,6 @@ const RespiratorySupport: React.FC = () => {
                 <h2 className="text-2xl sm:text-3xl font-bold mb-4 text-sky-900">
                   What Is a "Spell"?
                 </h2>
-                <p className="text-lg text-sky-900 leading-relaxed mb-6">
-                  Most NICU parents hear "spells" without understanding. Here's what it means:
-                </p>
                 
                 <div className="bg-white rounded-xl p-6 mb-6">
                   <p className="text-xl font-bold text-sky-900 mb-4">A spell = brief event that improves with time</p>
