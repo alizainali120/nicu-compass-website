@@ -12,6 +12,7 @@ import DonorMilkFAQ from './pages/DonorMilkFAQ'
 import RefluxAndColic from './pages/RefluxAndColic'
 import RespiratorySupport from './pages/RespiratorySupport'
 import MonitorCheatsheet from './pages/MonitorCheatsheet'
+import VitaminKForNewborns from './pages/VitaminKForNewborns'
 import ConnectionsGame from './pages/ConnectionsGame'
 import ConnectionsGame2 from './pages/ConnectionsGame2'
 import NICUWordMatch from './pages/NICUWordMatch'
@@ -253,6 +254,7 @@ const App: React.FC = () => {
         <Route path="/reflux-and-colic" element={<RefluxAndColic />} />
         <Route path="/respiratory-support" element={<RespiratorySupport />} />
         <Route path="/monitor-cheatsheet" element={<MonitorCheatsheet />} />
+        <Route path="/vitamin-k-for-newborns" element={<VitaminKForNewborns />} />
         <Route path="/nicu-word-match" element={<NICUWordMatch />} />
         <Route path="/nicu-word-builder" element={<NICUWordBuilder />} />
         <Route path="/match-the-nicu-term" element={<MatchTheNICUTerm />} />

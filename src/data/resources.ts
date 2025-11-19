@@ -41,6 +41,10 @@ export const resourceCards: ResourceCard[] = [
         {
           title: 'How to Read the Monitor Without Stressing (Parent Cheatsheet)',
           link: '/monitor-cheatsheet'
+        },
+        {
+          title: 'Vitamin K for Newborns: What Parents Need to Know',
+          link: '/vitamin-k-for-newborns'
         }
       ]
     }
