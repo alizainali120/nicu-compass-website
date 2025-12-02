@@ -49,6 +49,10 @@ export const resourceCards: ResourceCard[] = [
         {
           title: 'What to Expect When You\'re Expecting a Premature Baby',
           link: '/expecting-premature-baby'
+        },
+        {
+          title: 'Understanding Your Baby\'s Day in the NICU',
+          link: '/day-in-the-nicu'
         }
       ]
     }
