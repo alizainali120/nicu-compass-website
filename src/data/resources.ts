@@ -45,6 +45,10 @@ export const resourceCards: ResourceCard[] = [
         {
           title: 'Vitamin K for Newborns: What Parents Need to Know',
           link: '/vitamin-k-for-newborns'
+        },
+        {
+          title: 'What to Expect When You\'re Expecting a Premature Baby',
+          link: '/expecting-premature-baby'
         }
       ]
     }
