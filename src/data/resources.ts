@@ -53,6 +53,10 @@ export const resourceCards: ResourceCard[] = [
         {
           title: 'Understanding Your Baby\'s Day in the NICU',
           link: '/day-in-the-nicu'
+        },
+        {
+          title: 'Understanding Retinopathy of Prematurity (ROP)',
+          link: '/retinopathy-of-prematurity'
         }
       ]
     }
