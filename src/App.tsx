@@ -5,6 +5,7 @@ import ResourcesSection from './components/ResourcesSection'
 import { AppState } from './types'
 import { navigationItems } from './data/navigation'
 import NICUBasicsGuide from './pages/NICUBasicsGuide'
+import DecodeTheNICU from './pages/DecodeTheNICU'
 import FeedingInNICU from './pages/FeedingInNICU'
 import MilkComparison from './pages/MilkComparison'
 import DonorMilkFAQ from './pages/DonorMilkFAQ'
@@ -238,6 +239,7 @@ const App: React.FC = () => {
           }
         />
         <Route path="/nicu-basics-guide" element={<NICUBasicsGuide />} />
+        <Route path="/decode-the-nicu" element={<DecodeTheNICU />} />
         <Route path="/feeding-in-nicu" element={<FeedingInNICU />} />
         <Route path="/milk-comparison" element={<MilkComparison />} />
         <Route path="/donor-milk-faq" element={<DonorMilkFAQ />} />

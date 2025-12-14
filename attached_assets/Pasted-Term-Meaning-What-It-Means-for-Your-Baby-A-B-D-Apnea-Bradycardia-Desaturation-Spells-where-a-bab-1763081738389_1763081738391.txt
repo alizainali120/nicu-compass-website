@@ -1,0 +1,17 @@
+Term	Meaning	What It Means for Your Baby
+A/B/D	Apnea, Bradycardia, Desaturation	“Spells” where a baby briefly stops breathing (apnea), heart rate slows (bradycardia), or oxygen levels drop (desaturation). Common in preemies and usually improve with maturity.
+CPAP	Continuous Positive Airway Pressure	A machine that gently pushes air into your baby’s lungs to keep them open and make breathing easier.
+ETT	Endotracheal Tube	A small breathing tube placed in the windpipe and connected to a ventilator to help babies breathe.
+HFV	High-Frequency Ventilator	A special ventilator that gives hundreds of tiny breaths per minute — used for very fragile lungs.
+SIMV	Synchronized Intermittent Mandatory Ventilation	A type of ventilator that delivers set breaths but lets the baby breathe in between.
+HFNC	High-Flow Nasal Cannula	Delivers warm, humidified oxygen through soft prongs in the nose; gentler than CPAP.
+IVH	Intraventricular Hemorrhage	Bleeding in the brain’s fluid spaces, seen mainly in very premature infants. Monitored with ultrasound.
+PDA	Patent Ductus Arteriosus	A small vessel that should close after birth but sometimes stays open, affecting heart and lung function.
+ROP	Retinopathy of Prematurity	An eye condition in preterm babies; eye exams are done to detect it early.
+NPO	Nil Per Os (Latin for “nothing by mouth”)	Means no feedings are given by mouth or tube temporarily.
+TPN	Total Parenteral Nutrition	IV nutrition that provides calories, protein, and vitamins when babies can’t eat yet.
+PICC	Peripherally Inserted Central Catheter	A long IV line placed in a small vein for giving medicines or nutrition.
+UAC/UVC	Umbilical Arterial/Venous Catheter	Tubes placed in the umbilical cord shortly after birth to monitor blood pressure or give fluids.
+ABG	Arterial Blood Gas	A blood test that checks oxygen, carbon dioxide, and acid levels to see how well your baby is breathing.
+PEEP	Positive End-Expiratory Pressure	The gentle pressure a ventilator keeps in the lungs between breaths to prevent collapse.
+Kangaroo Care	Skin-to-skin holding	Holding your baby on your bare chest helps regulate temperature, breathing, and bonding.
